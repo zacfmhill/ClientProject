@@ -1,0 +1,10 @@
+PDF Editing:
+iText7
+PDFTron
+
+
+GUI Creation:
+Java Swing
+
+
+Additional Librarys
