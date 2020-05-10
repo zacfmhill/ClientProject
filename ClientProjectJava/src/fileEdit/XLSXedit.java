@@ -7,7 +7,7 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.xssf.usermodel.*;
 
 
-public class XMLedit {
+public class XLSXedit {
 	//Instance Variable for creating and opening Excel doc
 	private XSSFWorkbook workbook;
 	private XSSFSheet spreadsheet;
@@ -17,7 +17,7 @@ public class XMLedit {
 
 	
 	//creates new XML object to work on, not used for most part
-	public XMLedit() throws Exception{
+	public XLSXedit() throws Exception{
 		//Creates a Blank workbook
 		fileName = "testName";
 		workbook = new XSSFWorkbook();
@@ -27,7 +27,7 @@ public class XMLedit {
 	
 	
 	//create object from existing sheet, no specific sheet
-	public XMLedit(String myFileName) throws Exception{
+	public XLSXedit(String myFileName) throws Exception{
 		//opens given XML File for operating on
 		fileName = myFileName;
 		file = new File(fileName);
@@ -36,7 +36,7 @@ public class XMLedit {
 	    spreadsheet = workbook.getSheetAt(0);
 	}
 	//create object from existing sheet, specific sheet
-	public XMLedit(String myFileName,int sheetNum) throws Exception{
+	public XLSXedit(String myFileName,int sheetNum) throws Exception{
 		//opens given XML File for operating on
 		fileName = myFileName;
 		file = new File(fileName);
