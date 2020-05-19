@@ -16,7 +16,7 @@ public class XLSXedit {
 	private File file;
 
 	
-	//creates new XML object to work on, not used for most part
+	//creates new XLSX object to work on, only for testing
 	public XLSXedit() throws Exception{
 		//Creates a Blank workbook
 		fileName = "testName";
@@ -46,13 +46,13 @@ public class XLSXedit {
 	}
 	//write file stream to excel doc
 	public void write(int rowNum, int colNum,String value) throws Exception {
+		out = new FileOutputStream(file);
 		XSSFRow row = spreadsheet.createRow(rowNum);
 		row.createCell(colNum).setCellValue(value);
+		workbook.write(out);
 	}
 	//close file stream
 	public void close() throws Exception {
-		out = new FileOutputStream(file);
-		workbook.write(out);
 		out.close();
 	}
 }
