@@ -3,7 +3,11 @@ package fileEdit;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
@@ -15,6 +19,7 @@ import org.apache.poi.xwpf.usermodel.XWPFRun;
 import org.apache.poi.xwpf.usermodel.XWPFTable;
 import org.apache.poi.xwpf.usermodel.XWPFTableCell;
 import org.apache.poi.xwpf.usermodel.XWPFTableRow;
+import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTR;
 
 
 public class DOCXedit {
@@ -63,44 +68,120 @@ public class DOCXedit {
 	}
 	//add text to replace specific text, without a pre-message condition
 	public void writeTextReplace(String message, String replaceText) throws Exception {
-		outStream = new FileOutputStream(file);
+		Map<Integer, CTR> map = new TreeMap<Integer,CTR>();
 		for (XWPFParagraph para : docx.getParagraphs()) {
 			paragraph = para;
-			List<XWPFRun> runs = paragraph.getRuns();
-			if (runs != null) {
-				for (XWPFRun r : runs) {
-					run = r;
-					String content = r.getText(0);
-					System.out.println(content + "jjgiofguhfi");
-					if(content != null && content.contains(replaceText)) {
-						content = content.replace(replaceText, message);
-						System.out.println("doing this");
-						setRunFormat(run);
-						run.setText(content,0);
+			String paraContent = paragraph.getParagraphText();
+			if(paraContent != null && paraContent.contains(replaceText)) {
+				//if the paragraph contains our text, iterate through each run and add it to a map
+				int startSearchIndex = 0;
+				for(XWPFRun r: paragraph.getRuns()) {
+					int startIndex = paraContent.indexOf(r.getText(0),startSearchIndex);
+					startSearchIndex = startSearchIndex+r.getText(0).length();
+					CTR ctr = r.getCTR();
+					map.put(startIndex,ctr);
+				}
+				//index of where we want to add after.
+				int indexOfContentReplace = paraContent.indexOf(replaceText);
+				ArrayList<Integer> runs = findRuns(map,indexOfContentReplace,message);
+				replace(runs,message,replaceText,indexOfContentReplace,map);
+				break;
+					
+			}
+		}
+	}
+	
+	/*Note:
+	 * Future Version Possible Method:
+	 * Replace Specific Text After Specific Words
+	 */
+
+	//finds all runs needed, returns arrayList with each key for each run
+	private ArrayList<Integer> findRuns(Map<Integer,CTR> map,int indexOfContentReplace, String message) throws Exception {
+		ArrayList<Integer> modifying = new ArrayList<Integer>();
+		Iterator<Map.Entry<Integer, CTR>> itr = map.entrySet().iterator(); 
+		XWPFRun currentRun;
+		while(itr.hasNext()) {
+			Map.Entry<Integer, CTR> m = itr.next(); 
+			currentRun = paragraph.getRun(m.getValue());
+			int compareIndex = m.getKey()+currentRun.getText(0).length();
+			if((compareIndex >= indexOfContentReplace)&& (m.getKey()<=indexOfContentReplace+message.length())) {
+				modifying.add(m.getKey());
+			}
+		}
+		return modifying;
+	}
+
+	private void replace(ArrayList<Integer>runs,String message,String replaceText,int indexOfContentReplace,Map<Integer,CTR> map ) throws Exception{
+		outStream = new FileOutputStream(file);
+		XWPFRun currentRun;
+		String runText;
+		int cursor = 0;
+		for(Integer key: runs) {
+			currentRun = paragraph.getRun(map.get(key));
+			runText = currentRun.getText(0);
+			for(int i = 0; i<runText.length();i++) {
+				//if within the range of wanting to edit (<begin, >end, and cursor < message replacing length
+				if(key+i >= indexOfContentReplace && key+i<=indexOfContentReplace+message.length()&& cursor < message.length()) {
+					//if the cursor is greater than the actual replacement text
+					if(cursor>=replaceText.length()) {
+						//add the rest of the message past the cursor, since you can't find more text from replace Text!!
+						runText = runText.substring(0,i)+message.substring(cursor)+runText.substring(i+1);
+						currentRun.setText(runText,0);
 						docx.write(outStream);
 						return;
+						
+					}
+					//if the cursor is less than the actual replacement text
+					else {
+						if(replaceText.substring(cursor,cursor+1).equals(runText.substring(i,i+1))) {
+							runText = runText.substring(0,i)+message.substring(cursor,cursor+1)+runText.substring(i+1);
+							currentRun.setText(runText,0);
+							cursor++;
+						}
 					}
 				}
 			}
 		}
+			
+
+				
 		docx.write(outStream);
 	}
-	//add text to replace specific text that occurs after a specific phrase.
-	public void writeTextReplace(String message, String replaceText, String textBefore) {
-			
-	}
+	
+	
+	
 	//add text after a specific string
 	public void writeTextAdd(String message, String textBefore) throws Exception {
+		Map<Integer, CTR> map = new TreeMap();
 		outStream = new FileOutputStream(file);
 		for (XWPFParagraph para : docx.getParagraphs()) {
 			paragraph = para;
 			String paraContent = paragraph.getParagraphText();
+			
 			if(paraContent != null && paraContent.contains(textBefore)) {
-				int index = paraContent.indexOf(textBefore)+textBefore.length();
-				run = paragraph.insertNewRun(3);
-				setRunFormat(run);
-				run.setText(message);
-				break;
+				//if the paragraph contains our text, iterate through each run and add it to a map
+				for(XWPFRun r: paragraph.getRuns()) {
+					int startIndex = paraContent.indexOf(r.getText(0));
+					CTR ctr = r.getCTR();
+					map.put(startIndex,ctr);
+				}
+				//initializa CTR for identifying needed runs 
+				//index of where we want to add after.
+				int indexOfContentAdd = paraContent.indexOf(textBefore)+ textBefore.length();
+				for(Map.Entry<Integer, CTR> m : map.entrySet()){ ;
+					if(m.getKey()+paragraph.getRun(m.getValue()).getText(0).length() >= indexOfContentAdd) {
+						//run with the text before
+						CTR runACTR = m.getValue();
+						int runAKey = m.getKey();
+						int editAtIndex = Math.abs(indexOfContentAdd-runAKey);
+						XWPFRun runA = paragraph.getRun(runACTR);
+						String runContent = runA.getText(0);
+						runContent = runContent.substring(0,editAtIndex)+" "+message+runContent.substring(editAtIndex);
+						runA.setText(runContent,0);
+						break;
+					}
+				}
 			}
 		}
 		docx.write(outStream);

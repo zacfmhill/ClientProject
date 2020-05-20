@@ -10,13 +10,14 @@ public class TestApp {
 	public static void main(String[] args) throws Exception {
 		DOCXedit docxTest = new DOCXedit("C:\\Users\\zacfm\\OneDrive\\Desktop\\Chaperone Parking Information.docx");
 		System.out.println(docxTest.extract());
-		//docxTest.format(true, true, true, 12, UnderlinePatterns.SINGLE);
+		docxTest.format(true, true, true, 12, UnderlinePatterns.SINGLE);
 		//docxTest.writeTable(0,1,0,"test enter");
-		docxTest.writeTextAdd("towels","insert items");
+		 docxTest.writeTextReplace("test string ", "me in insert");
+		//XLSXedit xlsxTest = new XLSXedit(filelocation);
+		//xlsxTest.write(0, 3, "test");
+		//xlsxTest.close();
+		
+		
 	}
 	
 }
-
-
-
- 
