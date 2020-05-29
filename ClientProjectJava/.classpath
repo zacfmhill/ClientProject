@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="res"/>
 	<classpathentry kind="lib" path="C:/Users/zacfm/OneDrive/Documents/GitHub/ClientProject/poi-bin-3.12-20150511/poi-3.12/lib/commons-codec-1.9.jar"/>
 	<classpathentry kind="lib" path="C:/Users/zacfm/OneDrive/Documents/GitHub/ClientProject/poi-bin-3.12-20150511/poi-3.12/lib/commons-logging-1.1.3.jar"/>
 	<classpathentry kind="lib" path="C:/Users/zacfm/OneDrive/Documents/GitHub/ClientProject/poi-bin-3.12-20150511/poi-3.12/lib/junit-4.12.jar"/>
