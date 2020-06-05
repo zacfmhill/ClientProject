@@ -23,7 +23,8 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JSeparator;
-import GUI.gui;
+import javax.swing.plaf.OptionPaneUI;
+
 
 
 public class preDialog {
@@ -47,7 +48,19 @@ public class preDialog {
 		c1.setVisible(false);
 		c2.setVisible(false);
 		preDial = new JFrame("Choose Field Trip Form Type"); 
+		
 		preDial.setLayout( new FlowLayout() );  
+		String[] ops = {"User","Admin"};
+		int choice = JOptionPane.showOptionDialog(preDial, "User or Editor?", "Editor Login", 1, 1, null,ops , null);
+		if(choice == 1) {
+			String passEnter = JOptionPane.showInputDialog("Enter the PIN");
+			if(gui.setAllowed(passEnter)) {
+				JOptionPane.showMessageDialog(preDial, "Logging In As Editor");
+			}
+			else {
+				JOptionPane.showMessageDialog(preDial, "Logging In As User, PIN incorrect!");
+			}
+		}
 		JLabel title = new JLabel("Please choose the type of form, the location");
 		preDial.add(title);
 		preDial.add(new JLabel("of the original files, and the new save location"));
@@ -105,11 +118,6 @@ public class preDialog {
 			public void actionPerformed(ActionEvent e) {
 				JFileChooser fileChooser = new JFileChooser();
 	            fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-////////////////////delete
-////////////////////delete
-////////////////////delete
-////////////////////delete
-	            fileChooser.setCurrentDirectory(new File("C:\\Users\\zacfm\\OneDrive\\Desktop\\FORMS\\FY 2020 General Field Trip Packet-20200424T154947Z-001\\FY 2020 General Field Trip Packet")); ////////////////////delete
 	            int option = fileChooser.showOpenDialog(preDial);
 	            if(option == JFileChooser.APPROVE_OPTION){
 	               File file = fileChooser.getSelectedFile();

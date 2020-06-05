@@ -95,8 +95,8 @@ public class PDFedit {
 		PDAcroForm acroForm = docCatalog.getAcroForm();
 		PDField field = acroForm.getField(fieldName);
 		if(field.getFieldType().equals("Ch")) {
+			System.out.println((((PDComboBox)field).getOptionsDisplayValues()));
         		return ""+(((PDComboBox)field).getOptionsDisplayValues());
-        		//((PDComboBox)field).setValue(fieldValue);
         }
 		return null;
 	}

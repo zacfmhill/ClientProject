@@ -70,7 +70,8 @@ public class gui extends JFrame implements ActionListener {
 	private JFrame dRem;
 	private JPanel panelR;
 	public static String filePathToNew;
-	private String pass = "goggles";
+	private static boolean allowed = false;
+	private static String pass = "goggles";
 
 	
 	public static void invalid() {
@@ -82,6 +83,15 @@ public class gui extends JFrame implements ActionListener {
 	    	return true;
 	    }
 	    return false;
+	}
+	public static boolean setAllowed(String passEnter) {
+		if(passEnter.equals(pass)) {
+			allowed = true;
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 
 	public gui(String filePath,String folder,String newPath) throws FileNotFoundException {
@@ -514,9 +524,10 @@ private void dAddMake() {
 		           					if(box[1] instanceof JSplitPane) {
 		           						Component[] splPaneComp = ((JSplitPane)box[1]).getComponents();
 		           						String fileName = ((JTextArea)splPaneComp[0]).getText();
+		           						String fileID = ((JTextArea)splPaneComp[1]).getText();
 		           						for(File file:fileInFolder) {
 		        			            	if(file.getName().equals(fileName)) {
-		        			            		actingType = "COMBO_BOX"+PDFgetCombos.getCombo(placing.getText().strip(), file.getPath());
+		        			            		actingType = "COMBO_BOX"+PDFgetCombos.getCombo(fileID.strip(), file.getPath());
 		        			            	}
 		        			            }
 		           		    		actingID = "L-";//+placing.getText().strip();
@@ -797,18 +808,18 @@ private void dAddMake() {
 		    }
 		}
 		else if (e.getSource()== FieldAdd) {
-			if(pass.equals(JOptionPane.showInputDialog("Enter PIN"))) {
+			if(allowed) {
 			currentFiles = new ArrayList<String>();
 			dAddMake();
 			}
 		}
 		else if (e.getSource()== Remove) {
-			if(pass.equals(JOptionPane.showInputDialog("Enter PIN"))) {
+			if(allowed) {
 			dRemMake();
 			}
 		}
 		else if(e.getSource()==Default){
-			if(pass.equals(JOptionPane.showInputDialog("Enter PIN"))) {
+			if(allowed) {
 			if(0 == JOptionPane.showConfirmDialog(frame, "Are you sure you want to reset all the fields back to the default for 2020?")) {
 				
 				try {
@@ -819,6 +830,7 @@ private void dAddMake() {
 					e1.printStackTrace();
 				}
 			}
+			JOptionPane.showMessageDialog(frame, "You must restart the program in order to apply changes");
 			}
 		}
 	} 
@@ -841,7 +853,7 @@ private void dAddMake() {
        // Fmenu.addSeparator();
        // Fmenu.add(save);
        // Fmenu.addSeparator();
-        
+        if(allowed) {
         fieldEdit.add(FieldAdd);
         fieldEdit.addSeparator();
         fieldEdit.add(Remove);
@@ -853,7 +865,7 @@ private void dAddMake() {
        // Fmenu.add(preview);
         Fmenu.add(Default);
         Fmenu.addSeparator();
-
+        }
         
         Fmenu.add(help);
        // Fmenu.addSeparator();
