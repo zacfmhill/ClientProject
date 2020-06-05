@@ -1,6 +1,7 @@
 package TestApplicationFiles;
 
 import fileEdit.DOCXedit;
+import fileEdit.GeneratorPDF;
 import fileEdit.PDFedit;
 import fileEdit.XLSXedit;
 import java.io.*;
@@ -21,17 +22,17 @@ public class TestApp {
 		//XLSXedit xlsxTest = new XLSXedit(--------filelocation--------);
 		//xlsxTest.write(0, 3, "test");
 		//xlsxTest.close();
-		//PDFedit pdfTest = new PDFedit("C:\\Users\\zacfm\\OneDrive\\Desktop\\FORMS\\FY 2020 General Field Trip Packet-20200424T154947Z-001\\FY 2020 General Field Trip Packet\\260-1--Fee Waiver Record.pdf");
+		//PDFedit pdfTest = new PDFedit("./fileC.pdf");
 		//System.out.println(pdfTest.strip());
-		//pdfTest.setField("2","test input");
+		//pdfTest.setField("5","true");
 		//List fields = pdfTest.getFields();
 		//Iterator fieldIterator = fields.iterator();
 		//while(fieldIterator.hasNext()) {
 		//	PDField currField = (PDField)fieldIterator.next();
-		//	System.out.println(currField.getFieldType() + " - " + currField.getPartialName()+ " - " +currField.getValueAsString() );
+		//	System.out.println(currField.getFieldType() + " - " + currField.getPartialName()+" - " +currField.getValueAsString()+" - " + currField.getAlternateFieldName());
 		//}
 		//pdfTest.save("./testPDF.pdf");
-		
+		//GeneratorPDF.generate("fileC.pdf");
 		
 	}
 	

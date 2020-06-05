@@ -185,6 +185,7 @@ public class DOCXedit {
 			}
 		}
 		docx.write(outStream);
+		outStream.close();
 	}
 	//write message to a cell in a table in a doc
 	public void writeTable(int tableNum, int settingRow, int settingCol, String message) throws Exception {

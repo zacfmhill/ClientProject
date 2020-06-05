@@ -13,8 +13,13 @@ import org.apache.pdfbox.pdmodel.PDPageContentStream;
 import org.apache.pdfbox.pdmodel.font.PDFont;
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
 import org.apache.pdfbox.pdmodel.interactive.form.PDAcroForm;
+import org.apache.pdfbox.pdmodel.interactive.form.PDButton;
+import org.apache.pdfbox.pdmodel.interactive.form.PDCheckBox;
+import org.apache.pdfbox.pdmodel.interactive.form.PDChoice;
+import org.apache.pdfbox.pdmodel.interactive.form.PDComboBox;
 import org.apache.pdfbox.pdmodel.interactive.form.PDField;
 import org.apache.pdfbox.text.PDFTextStripper;
+import org.apache.pdfbox.pdmodel.interactive.form.PDTerminalField;
 
 public class PDFedit {
 	//Instance variables
@@ -62,14 +67,38 @@ public class PDFedit {
 		document.getNumberOfPages();
         PDAcroForm acroForm = docCatalog.getAcroForm();
         PDField field = acroForm.getField(fieldName);
+        
         if( field != null ) {
-        	System.out.println(field.getActions());
+        	
+        	//dropdown
+        	if(field.getFieldType().equals("Ch")) {
+        	//	System.out.println(((PDComboBox)field).getOptionsDisplayValues() + " -");
+        		((PDComboBox)field).setValue(fieldValue);
+        	}
+        	//checkbox
+        	else if(field.getFieldType().equals("Btn")) {
+        		System.out.println(((PDButton)field).getOnValues());
+        		((PDCheckBox)field).setValue(fieldValue);
+        	}
+        	//text
+        	else {
             field.setValue(fieldValue);
+        	}
         }
         else {
             return false;
         }
 		return true;
+	}
+	public String getCombo(String fieldName) {
+		document.getNumberOfPages();
+		PDAcroForm acroForm = docCatalog.getAcroForm();
+		PDField field = acroForm.getField(fieldName);
+		if(field.getFieldType().equals("Ch")) {
+        		return ""+(((PDComboBox)field).getOptionsDisplayValues());
+        		//((PDComboBox)field).setValue(fieldValue);
+        }
+		return null;
 	}
 	
 	public List getFields(){
@@ -92,7 +121,7 @@ public class PDFedit {
 	//saves the pdf to the given path
 	public void save(String path) throws Exception {
 		document.save(path);
-		document.close();
+		//document.close();
 	}
 	public String strip() throws Exception {
 		PDFTextStripper pdfStripper = new PDFTextStripper();
