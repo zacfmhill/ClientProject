@@ -70,6 +70,7 @@ public class gui extends JFrame implements ActionListener {
 	private JFrame dRem;
 	private JPanel panelR;
 	public static String filePathToNew;
+	private String pass = "goggles";
 
 	
 	public static void invalid() {
@@ -111,6 +112,7 @@ public class gui extends JFrame implements ActionListener {
 		 	frame =new JFrame("Form Filler");
 
 //CREATE MENU
+		 	
 	        JMenuBar menuBar=new JMenuBar(); 
 	        menuBar.add(Fmenu());
 	        
@@ -795,13 +797,18 @@ private void dAddMake() {
 		    }
 		}
 		else if (e.getSource()== FieldAdd) {
+			if(pass.equals(JOptionPane.showInputDialog("Enter PIN"))) {
 			currentFiles = new ArrayList<String>();
 			dAddMake();
+			}
 		}
 		else if (e.getSource()== Remove) {
+			if(pass.equals(JOptionPane.showInputDialog("Enter PIN"))) {
 			dRemMake();
+			}
 		}
 		else if(e.getSource()==Default){
+			if(pass.equals(JOptionPane.showInputDialog("Enter PIN"))) {
 			if(0 == JOptionPane.showConfirmDialog(frame, "Are you sure you want to reset all the fields back to the default for 2020?")) {
 				
 				try {
@@ -811,6 +818,7 @@ private void dAddMake() {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
+			}
 			}
 		}
 	} 
@@ -833,6 +841,7 @@ private void dAddMake() {
        // Fmenu.addSeparator();
        // Fmenu.add(save);
        // Fmenu.addSeparator();
+        
         fieldEdit.add(FieldAdd);
         fieldEdit.addSeparator();
         fieldEdit.add(Remove);
@@ -844,6 +853,8 @@ private void dAddMake() {
        // Fmenu.add(preview);
         Fmenu.add(Default);
         Fmenu.addSeparator();
+
+        
         Fmenu.add(help);
        // Fmenu.addSeparator();
         //file options end
