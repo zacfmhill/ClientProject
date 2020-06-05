@@ -1,0 +1,152 @@
+??Depending on the the file extension that you put, the FieldID will change significantly:
+??DOCX:
+??If editing a table: put a "T-", and then the number the order of the table, for example if it is the second table 
+??in the document, put T-2. Then, separated by a dash, put the row, a dash, and then column. example, if I wanted 
+??table#2 and row 2 column 1, I would enter T-2-2-1
+??If you are trying to replace text, the field ID should be "R-" and then the text you want to replace
+??note that the program will only replace the first instance of this text, 
+??so if you want the second place it exists, you must be more specific with the search query, although as 
+??it stands in the documents as of 2020, this is not an issue you should run into.
+??Ex: replacing "Insert Student Name": R-Insert Student Name
+??If you are trying to insert text, the Field ID should be "I-", the text to insert after
+??note that the program will only insert after the first instance, although this should not be an issue
+??as of the current 2020 documents as long as you are specific enough!
+??Ex: adding after "Student Number:": I-Student Number:
+??XLSX:
+??If you are editing the first sheet, just put "C-" and then the row number, a dash, and the column number
+??If it is not the first sheet(although as of 2020 it should be), it should be "S-",the sheet #,dash,the row number,dash, and the column number
+??Ex: writing to the cell on row 2 column 4 of sheet #1: C-2-4
+??Ex: writing to the cell on row 2 column 4 of sheet #3: S-3-2-4
+??PDF: **note, no spaces anywhere!!
+??If you are trying to edit a checkbox (all types: single, Y/N, or multiple): put C- and the pdf ID, ex: C-6
+??If you are trying to edit a combo box: put L- and the pdf ID ex. L-ALL SCHOOLS 5/2019
+??If you are trying to edit a date: D- and the three id's separated by dashes. ex: D-3-4-5
+??If you are trying to edit a text box: T- and the id 
+??Types:
+??CHECK BOXES(SINGLE): If you want text next to the check box, the type must be CHECK_BOX-textNextToBox
+??Otherwise just put CHECK_BOX
+??CHECK BOXES(MULTIPLE): the type must be CHECK_BOX-textNextToBox1-textNextToBox2-textNextToBox3 and so on.
+??CHECK BOXES(YES/NO, 2): Uses only one progID for both check boxes, use whatever progID you want that does not overlap with an existing ID
+??then for Field ID, put IDyes-IDno separated by a dash!! The type for these is YN_BOX
+??Ex: ID in pdf for yes/no boxes is 11 my tag would be: %$@$%5%$@$%fileC.pdf%$@$%Y-11%$@$%
+??If you want a COMBO_BOX: add the different DropDown options in the following way: 
+??(note, no spaces between commas!!!!): COMBO_BOX[arg1,arg2,arg3]
+??example tagging:
+??%$#$%6%$#$%COMBO_BOX[apple,banana,strawberry]%$#$%Favorite Fruit%$#$%
+??If you want a DATE type of input (3 spinners, month,day,year) the type is DATE, but in the 
+??"field ID from file" argument, you must put the three date fields separated by dashes.
+??ex. date fields take up fieldFileID's 3,4,and 5, my FieldIDFromFile would be: 3-4-5
+
+
+%$#$%FielProgID%$#$%FieldType%$#$%Field Nick Name%$#$%
+%$#$%2%$#$%TEXT%$#$%Test Field 1%$#$%
+%$#$%3%$#$%YN_BOX%$#$%Test Field 2%$#$%
+%$#$%4%$#$%CHECK_BOX-Test-test2-test3%$#$%Test Field 3%$#$%
+%$#$%5%$#$%DATE%$#$%Test Field 4%$#$%
+%$#$%6%$#$%COMBO_BOX[arg1,arg2,arg3]%$#$%Test Field 5%$#$%
+%$#$%8%$#$%CHECK_BOX-test%$#$%Test Field 6%$#$%
+%$#$%9%$#$%COMBO_BOX[,-- Choose One --, A. Mario Loiederman MS - 787, Albert Einstein HS - 789, Alternative Education Programs - 239, Arcola ES - 790, Argyle MS - 823, Ashburton ES - 425, Bannockburn ES - 420, Bayard Rustin ES - 346, Beall ES - 207, Bel Pre ES - 780, Bells Mill ES - 607, Belmont ES - 513, Benjamin Banneker MS - 333, Bethesda ES - 401, Bethesda-Chevy Chase HS - 406, Beverly Farms ES - 226, Bradley Hills ES - 410, Briggs Chaney MS - 335, Brooke Grove ES - 518, Brookhaven ES - 807, Brown Station ES - 559, Burning Tree ES - 419, Burnt Mills ES - 309, Burtonsville ES - 302, Cabin John MS - 606, Candlewood ES - 508, Cannon Road ES - 310, Capt. James Daly ES - 111, Carderock Springs ES - 604, Carl Sandburg Learning Center SSAP - 215, Cashell ES - 511, Cedar Grove ES - 703, Chevy Chase ES - 403, Clarksburg ES - 101, Clarksburg HS - 249, Clearspring ES - 706, Clopper Mill ES - 100, Cloverly ES - 308, Col. E. Brooke Lee MS - 818, Col. Zadok Magruder HS - 510, Cold Spring ES - 238, College Gardens ES - 229, Cresthaven ES - 808, Damascus ES - 702, Damascus HS - 701, Darnestown ES - 351, Diamond ES - 570, Dr. Charles Drew ES - 747, Dr. Sally K. Ride ES - 242, DuFief ES - 241, Earle B. Wood MS - 820, East Silver Spring ES - 756, Eastern MS - 775, Emory Grove Center - 890, Fairland ES - 303, Fallsmead ES - 233, Farmland ES - 219, Fields Road ES - 566, Flora M. Singer ES - 770, Flower Hill ES - 549, Flower Valley ES - 506, Forest Knolls ES - 803, Forest Oak MS - 248, Fox Chapel ES - 106, Francis Scott Key MS - 311, Gaithersburg ES - 553, Gaithersburg HS - 551, Gaithersburg MS - 554, Galway ES - 313, Garrett Park ES - 204, Georgian Forest ES - 786, Germantown ES - 102, Glen Haven ES - 767, Glenallan ES - 817, Goshen ES - 546, Great Seneca Creek ES - 340, Greencastle ES - 334, Greenwood ES - 512, Hallie Wells MS - 345, Harmony Hills ES - 797, Herbert Hoover MS - 228, Highland ES - 774, Highland View ES - 784, Jackson Road ES - 305, James Hubert Blake HS - 321, JoAnn Leleck ES at Broad Acres - 304, John F. Kennedy HS - 815, John Poole MS - 247, John T. Baker MS - 705, Jones Lane ES - 360, Judith A. Resnik ES - 514, Julius West MS - 211, Kemp Mill ES - 805, Kensington Parkwood ES - 783, Kingsview MS - 708, Lake Seneca ES - 108, Lakelands Park MS - 522, Lakewood ES - 209, Lathrop E. Smith Environmental Education Center - 990, Laytonsville ES - 051, Little Bennett ES - 336, Lois P. Rockwell ES - 156, Longview School SSAP - 951, Lucy V. Barnsley ES - 505, Luxmanor ES - 220, MacDonald Knolls Early Childhood Center - 793, Martin Luther King MS - 107, Maryvale ES - 210, Meadow Hall ES - 212, Mill Creek Towne ES - 556, Monocacy ES - 652, Montgomery Blair HS - 757, Montgomery Knolls ES - 776, Montgomery Village MS - 557, Neelsville MS - 115, New Hampshire Estates ES - 791, Newport Mill MS - 792, North Bethesda MS - 413, North Chevy Chase ES - 415, Northwest HS - 246, Northwood HS - 796, Oak View ES - 766, Oakland Terrace ES - 769, Olney ES - 502, Paint Branch HS - 315, Parkland MS - 812, Pine Crest ES - 761, Piney Branch ES - 749, Poolesville ES - 153, Poolesville HS - 152, Potomac ES - 601, Quince Orchard HS - 125, Rachel Carson ES - 159, Redland MS - 562, Regional Institute for Children and Adolescents (RICA) SSAP - 965, Richard Montgomery HS - 201, Ridgeview MS - 105, Ritchie Park ES - 227, Robert Frost MS - 237, Roberto W. Clemente MS - 157, Rock Creek Forest ES - 773, Rock Creek Valley ES - 819, Rock Terrace School SSAP - 916, Rock View ES - 795, Rockville HS - 230, Rocky Hill MS - 707, Rolling Terrace ES - 771, Ronald A. McNair ES - 158, Rosa M. Parks MS - 155, Roscoe R. Nix ES - 307, Rosemary Hills ES - 794, Rosemont ES - 555, S. Christa McAuliffe ES - 110, Sargent Shriver ES - 779, Seneca Valley HS - 104, Sequoyah ES - 565, Seven Locks ES - 603, Shady Grove MS - 521, Sherwood ES - 501, Sherwood HS - 503, Silver Creek MS – 835, Silver Spring International MS - 647, Sligo Creek ES - 517, Sligo MS - 778, Snowden Farm ES - 347, Somerset ES - 405, South Lake ES - 564, Spark M. Matsunaga ES - 523, Springbrook HS - 798, Stedwick ES - 568, Stephen Knolls School SSAP - 799, Stone Mill ES - 653, Stonegate ES - 316, Strathmore ES - 822, Strawberry Knoll ES - 569, Summit Hall ES - 563, Takoma Park ES - 754, Takoma Park MS - 755, Thomas Edison High School of Technology - 748, Thomas S. Wootton HS - 234, Thomas W. Pyle MS - 428, Thurgood Marshall ES - 244, Tilden MS - 232, Travilah ES - 216, Twinbrook ES - 206, Viers Mill ES - 772, Walt Whitman HS - 427, Walter Johnson HS - 424, Washington Grove ES - 552, Waters Landing ES - 109, Watkins Mill ES - 561, Watkins Mill HS - 545, Wayside ES - 235, Weller Road ES - 777, Westbrook ES - 408, Westland MS - 412, Westover ES - 504, Wheaton HS - 782, Wheaton Woods ES - 788, Whetstone ES - 558, White Oak MS - 811, William B. Gibbs, Jr. ES - 337, William H. Farquhar MS - 507, William Tyler Page ES - 312, Wilson Wims ES - 341, Winston Churchill HS - 602, Wood Acres ES - 417, Woodfield ES - 704, Woodlin ES - 764, Wyngate ES - 422]%$#$%Test Field 6%$#$%
+%$#$%10%$#$%TEXT%$#$%Test Field 1%$#$%
+
+
+%$@$%FieldProgID%$@$%FileName%$@$%FieldIDFromFile%$@$%
+%$@$%2%$@$%fileA.docx%$@$%R-Replace this%$@$%
+%$@$%2%$@$%fileA.docx%$@$%I-insert after this%$@$%
+%$@$%2%$@$%fileB.xlsx%$@$%C-3-4%$@$%
+%$@$%2%$@$%fileB.xlsx%$@$%C-5-6%$@$%
+%$@$%10%$@$%fileB.xlsx%$@$%C-5-6%$@$%
+%$@$%4%$@$%fileC.pdf%$@$%C-5%$@$%
+%$@$%9%$@$%fileC.pdf%$@$%L-ALL SCHOOLS 5/2019%$@$%
+%$@$%5%$@$%fileC.pdf%$@$%D-22-23-24%$@$%
+
+
+%$#$%71%$#$%TEXT%$#$%hello%$#$%
+%$@$%71%$@$%C:\Users\zacfm\OneDrive\Desktop\FORMS\FY 2020 General Field Trip Packet-20200424T154947Z-001\FY 2020 General Field Trip Packet\260-1--Fee Waiver Record.pdf%$@$%T-%$@$%
+%$@$%71%$@$%C:\Users\zacfm\OneDrive\Desktop\FORMS\FY 2020 General Field Trip Packet-20200424T154947Z-001\FY 2020 General Field Trip Packet\Form 3 Parent-Guardian Approval for Trips MCPS Transportation is provided 555-6--FY20.pdf%$@$%T-%$@$%%$#$%73%$#$%CHECK_BOX-title 1-title 2-title 3%$#$%test check%$#$%
+%$#$%77%$#$%CHECK_BOX-title 1-title 2-title 3%$#$%test checke%$#$%
+%$@$%77%$@$%C:\Users\zacfm\OneDrive\Desktop\FORMS\FY 2020 General Field Trip Packet-20200424T154947Z-001\FY 2020 General Field Trip Packet\260-1--Fee Waiver Record.pdf%$@$%C-Enter the id of the checkbox, a dash, and then for each checkbox the title you want displayed each seperated by a dash. Ex: 5-title 1-title 2-title 3%$@$%%$#$%79%$#$%CHECK_BOX-title 1-title 2-title 3%$#$%Default Field Name%$#$%
+%$@$%79%$@$%C:\Users\zacfm\OneDrive\Desktop\FORMS\FY 2020 General Field Trip Packet-20200424T154947Z-001\FY 2020 General Field Trip Packet\260-1--Fee Waiver Record.pdf%$@$%C-Enter the id of the checkbox, a dash, and then for each checkbox the title you want displayed each seperated by a dash. Ex: 5-title 1-title 2-title 3%$@$%
+
+%$@$%79%$@$%C:\Users\zacfm\OneDrive\Desktop\FORMS\FY 2020 General Field Trip Packet-20200424T154947Z-001\FY 2020 General Field Trip Packet\Final June Field Trip Form--FY20.pdf%$@$%C-Enter the id of the checkbox, a dash, and then for each checkbox the title you want displayed each seperated by a dash. Ex: 5-title 1-title 2-title 3%$@$%
+%$#$%81%$#$%TEXT%$#$%Default Field Name%$#$%
+%$@$%81%$@$%C:\Users\zacfm\OneDrive\Desktop\FORMS\FY 2020 General Field Trip Packet-20200424T154947Z-001\FY 2020 General Field Trip Packet\260-1--Fee Waiver Record.pdf%$@$%L-3%$@$%
+
+%$@$%81%$@$%C:\Users\zacfm\OneDrive\Desktop\FORMS\FY 2020 General Field Trip Packet-20200424T154947Z-001\FY 2020 General Field Trip Packet\Final June Field Trip Form--FY20.pdf%$@$%L-3%$@$%
+%$#$%84%$#$%TEXT%$#$%ooggaboogatets%$#$%
+%$@$%84%$@$%C:\Users\zacfm\OneDrive\Desktop\FORMS\FY 2020 General Field Trip Packet-20200424T154947Z-001\FY 2020 General Field Trip Packet\260-1--Fee Waiver Record.pdf%$@$%T-7%$@$%
+
+%$@$%84%$@$%C:\Users\zacfm\OneDrive\Desktop\FORMS\FY 2020 General Field Trip Packet-20200424T154947Z-001\FY 2020 General Field Trip Packet\Final June Field Trip Form--FY20.pdf%$@$%T-7%$@$%
+
+%$@$%84%$@$%C:\Users\zacfm\OneDrive\Desktop\FORMS\FY 2020 General Field Trip Packet-20200424T154947Z-001\FY 2020 General Field Trip Packet\Form 3 Parent-Guardian Approval for Trips MCPS Transportation is provided 555-6--FY20.pdf%$@$%T-7%$@$%
+
+%$#$%86%$#$%%$#$%testcombowombo%$#$%
+%$@$%86%$@$%C:\Users\zacfm\OneDrive\Desktop\FORMS\FY 2020 General Field Trip Packet-20200424T154947Z-001\FY 2020 General Field Trip Packet\260-1--Fee Waiver Record.pdf%$@$%L-ALL SCHOOLS 5/2019%$@$%
+
+%$#$%89%$#$%COMBO_BOXnull%$#$%Default Field Name%$#$%
+%$@$%89%$@$%C:\Users\zacfm\OneDrive\Desktop\FORMS\FY 2020 General Field Trip Packet-20200424T154947Z-001\FY 2020 General Field Trip Packet\260-1--Fee Waiver Record.pdf%$@$%L-ALL SCHOOLS 5/2019%$@$%
+
+%$#$%90%$#$%COMBO_BOXnull%$#$%Default Field Name%$#$%
+%$@$%90%$@$%C:\Users\zacfm\OneDrive\Desktop\FORMS\FY 2020 General Field Trip Packet-20200424T154947Z-001\FY 2020 General Field Trip Packet\260-1--Fee Waiver Record.pdf%$@$%L-ALL SCHOOLS 5/2019%$@$%
+
+%$#$%93%$#$%COMBO_BOXnull%$#$%Default Field Name%$#$%
+%$@$%93%$@$%C:\Users\zacfm\OneDrive\Desktop\FORMS\FY 2020 General Field Trip Packet-20200424T154947Z-001\FY 2020 General Field Trip Packet\260-1--Fee Waiver Record.pdf%$@$%L-ALL SCHOOLS 5/2019%$@$%
+
+%$#$%95%$#$%COMBO_BOX[-- Choose One --, A. Mario Loiederman MS - 787, Albert Einstein HS - 789, Alternative Education Programs - 239, Arcola ES - 790, Argyle MS - 823, Ashburton ES - 425, Bannockburn ES - 420, Bayard Rustin ES - 346, Beall ES - 207, Bel Pre ES - 780, Bells Mill ES - 607, Belmont ES - 513, Benjamin Banneker MS - 333, Bethesda ES - 401, Bethesda-Chevy Chase HS - 406, Beverly Farms ES - 226, Bradley Hills ES - 410, Briggs Chaney MS - 335, Brooke Grove ES - 518, Brookhaven ES - 807, Brown Station ES - 559, Burning Tree ES - 419, Burnt Mills ES - 309, Burtonsville ES - 302, Cabin John MS - 606, Candlewood ES - 508, Cannon Road ES - 310, Capt. James Daly ES - 111, Carderock Springs ES - 604, Carl Sandburg Learning Center SSAP - 215, Cashell ES - 511, Cedar Grove ES - 703, Chevy Chase ES - 403, Clarksburg ES - 101, Clarksburg HS - 249, Clearspring ES - 706, Clopper Mill ES - 100, Cloverly ES - 308, Col. E. Brooke Lee MS - 818, Col. Zadok Magruder HS - 510, Cold Spring ES - 238, College Gardens ES - 229, Cresthaven ES - 808, Damascus ES - 702, Damascus HS - 701, Darnestown ES - 351, Diamond ES - 570, Dr. Charles Drew ES - 747, Dr. Sally K. Ride ES - 242, DuFief ES - 241, Earle B. Wood MS - 820, East Silver Spring ES - 756, Eastern MS - 775, Emory Grove Center - 890, Fairland ES - 303, Fallsmead ES - 233, Farmland ES - 219, Fields Road ES - 566, Flora M. Singer ES - 770, Flower Hill ES - 549, Flower Valley ES - 506, Forest Knolls ES - 803, Forest Oak MS - 248, Fox Chapel ES - 106, Francis Scott Key MS - 311, Gaithersburg ES - 553, Gaithersburg HS - 551, Gaithersburg MS - 554, Galway ES - 313, Garrett Park ES - 204, Georgian Forest ES - 786, Germantown ES - 102, Glen Haven ES - 767, Glenallan ES - 817, Goshen ES - 546, Great Seneca Creek ES - 340, Greencastle ES - 334, Greenwood ES - 512, Hallie Wells MS - 345, Harmony Hills ES - 797, Herbert Hoover MS - 228, Highland ES - 774, Highland View ES - 784, Jackson Road ES - 305, James Hubert Blake HS - 321, JoAnn Leleck ES at Broad Acres - 304, John F. Kennedy HS - 815, John Poole MS - 247, John T. Baker MS - 705, Jones Lane ES - 360, Judith A. Resnik ES - 514, Julius West MS - 211, Kemp Mill ES - 805, Kensington Parkwood ES - 783, Kingsview MS - 708, Lake Seneca ES - 108, Lakelands Park MS - 522, Lakewood ES - 209, Lathrop E. Smith Environmental Education Center - 990, Laytonsville ES - 051, Little Bennett ES - 336, Lois P. Rockwell ES - 156, Longview School SSAP - 951, Lucy V. Barnsley ES - 505, Luxmanor ES - 220, MacDonald Knolls Early Childhood Center - 793, Martin Luther King MS - 107, Maryvale ES - 210, Meadow Hall ES - 212, Mill Creek Towne ES - 556, Monocacy ES - 652, Montgomery Blair HS - 757, Montgomery Knolls ES - 776, Montgomery Village MS - 557, Neelsville MS - 115, New Hampshire Estates ES - 791, Newport Mill MS - 792, North Bethesda MS - 413, North Chevy Chase ES - 415, Northwest HS - 246, Northwood HS - 796, Oak View ES - 766, Oakland Terrace ES - 769, Olney ES - 502, Paint Branch HS - 315, Parkland MS - 812, Pine Crest ES - 761, Piney Branch ES - 749, Poolesville ES - 153, Poolesville HS - 152, Potomac ES - 601, Quince Orchard HS - 125, Rachel Carson ES - 159, Redland MS - 562, Regional Institute for Children and Adolescents (RICA) SSAP - 965, Richard Montgomery HS - 201, Ridgeview MS - 105, Ritchie Park ES - 227, Robert Frost MS - 237, Roberto W. Clemente MS - 157, Rock Creek Forest ES - 773, Rock Creek Valley ES - 819, Rock Terrace School SSAP - 916, Rock View ES - 795, Rockville HS - 230, Rocky Hill MS - 707, Rolling Terrace ES - 771, Ronald A. McNair ES - 158, Rosa M. Parks MS - 155, Roscoe R. Nix ES - 307, Rosemary Hills ES - 794, Rosemont ES - 555, S. Christa McAuliffe ES - 110, Sargent Shriver ES - 779, Seneca Valley HS - 104, Sequoyah ES - 565, Seven Locks ES - 603, Shady Grove MS - 521, Sherwood ES - 501, Sherwood HS - 503, Silver Creek MS – 835, Silver Spring International MS - 647, Sligo Creek ES - 517, Sligo MS - 778, Snowden Farm ES - 347, Somerset ES - 405, South Lake ES - 564, Spark M. Matsunaga ES - 523, Springbrook HS - 798, Stedwick ES - 568, Stephen Knolls School SSAP - 799, Stone Mill ES - 653, Stonegate ES - 316, Strathmore ES - 822, Strawberry Knoll ES - 569, Summit Hall ES - 563, Takoma Park ES - 754, Takoma Park MS - 755, Thomas Edison High School of Technology - 748, Thomas S. Wootton HS - 234, Thomas W. Pyle MS - 428, Thurgood Marshall ES - 244, Tilden MS - 232, Travilah ES - 216, Twinbrook ES - 206, Viers Mill ES - 772, Walt Whitman HS - 427, Walter Johnson HS - 424, Washington Grove ES - 552, Waters Landing ES - 109, Watkins Mill ES - 561, Watkins Mill HS - 545, Wayside ES - 235, Weller Road ES - 777, Westbrook ES - 408, Westland MS - 412, Westover ES - 504, Wheaton HS - 782, Wheaton Woods ES - 788, Whetstone ES - 558, White Oak MS - 811, William B. Gibbs, Jr. ES - 337, William H. Farquhar MS - 507, William Tyler Page ES - 312, Wilson Wims ES - 341, Winston Churchill HS - 602, Wood Acres ES - 417, Woodfield ES - 704, Woodlin ES - 764, Wyngate ES - 422]%$#$%Default Field Name%$#$%
+%$@$%95%$@$%C:\Users\zacfm\OneDrive\Desktop\FORMS\FY 2020 General Field Trip Packet-20200424T154947Z-001\FY 2020 General Field Trip Packet\260-1--Fee Waiver Record.pdf%$@$%L-ALL SCHOOLS 5/2019%$@$%
+
+%$#$%98%$#$%TEXT%$#$%Default Field Name%$#$%
+%$@$%98%$@$%C:\Users\zacfm\OneDrive\Desktop\FORMS\FY 2020 General Field Trip Packet-20200424T154947Z-001\FY 2020 General Field Trip Packet\260-1--Fee Waiver Record.pdf%$@$%T-5%$@$%
+
+%$@$%98%$@$%C:\Users\zacfm\OneDrive\Desktop\FORMS\FY 2020 General Field Trip Packet-20200424T154947Z-001\FY 2020 General Field Trip Packet\Final June Field Trip Form--FY20.pdf%$@$%T-5%$@$%
+
+%$#$%100%$#$%TEXT%$#$%tettxt%$#$%
+%$@$%100%$@$%C:\Users\zacfm\OneDrive\Desktop\FORMS\FY 2020 General Field Trip Packet-20200424T154947Z-001\FY 2020 General Field Trip Packet\260-1--Fee Waiver Record.pdf%$@$%T-just enter the id of the text field%$@$%
+
+%$@$%100%$@$%C:\Users\zacfm\OneDrive\Desktop\FORMS\FY 2020 General Field Trip Packet-20200424T154947Z-001\FY 2020 General Field Trip Packet\Final June Field Trip Form--FY20.pdf%$@$%T-just enter the id of the text field%$@$%
+
+%$@$%100%$@$%C:\Users\zacfm\OneDrive\Desktop\FORMS\FY 2020 General Field Trip Packet-20200424T154947Z-001\FY 2020 General Field Trip Packet\Form 3 Parent-Guardian Approval for Trips MCPS Transportation is provided 555-6--FY20.pdf%$@$%T-just enter the id of the text field%$@$%
+
+%$#$%102%$#$%TEXT%$#$%T2.0 test 1%$#$%
+%$@$%102%$@$%C:\Users\zacfm\OneDrive\Desktop\FORMS\FY 2020 General Field Trip Packet-20200424T154947Z-001\FY 2020 General Field Trip Packet\260-1--Fee Waiver Record.pdf%$@$%T-1%$@$%
+
+%$@$%102%$@$%C:\Users\zacfm\OneDrive\Desktop\FORMS\FY 2020 General Field Trip Packet-20200424T154947Z-001\FY 2020 General Field Trip Packet\Final June Field Trip Form--FY20.pdf%$@$%T-2%$@$%
+
+%$@$%102%$@$%C:\Users\zacfm\OneDrive\Desktop\FORMS\FY 2020 General Field Trip Packet-20200424T154947Z-001\FY 2020 General Field Trip Packet\Form 3 Parent-Guardian Approval for Trips MCPS Transportation is provided 555-6--FY20.pdf%$@$%T-3%$@$%
+
+%$#$%105%$#$%COMBO_BOX[-- Choose One --, A. Mario Loiederman MS - 787, Albert Einstein HS - 789, Alternative Education Programs - 239, Arcola ES - 790, Argyle MS - 823, Ashburton ES - 425, Bannockburn ES - 420, Bayard Rustin ES - 346, Beall ES - 207, Bel Pre ES - 780, Bells Mill ES - 607, Belmont ES - 513, Benjamin Banneker MS - 333, Bethesda ES - 401, Bethesda-Chevy Chase HS - 406, Beverly Farms ES - 226, Bradley Hills ES - 410, Briggs Chaney MS - 335, Brooke Grove ES - 518, Brookhaven ES - 807, Brown Station ES - 559, Burning Tree ES - 419, Burnt Mills ES - 309, Burtonsville ES - 302, Cabin John MS - 606, Candlewood ES - 508, Cannon Road ES - 310, Capt. James Daly ES - 111, Carderock Springs ES - 604, Carl Sandburg Learning Center SSAP - 215, Cashell ES - 511, Cedar Grove ES - 703, Chevy Chase ES - 403, Clarksburg ES - 101, Clarksburg HS - 249, Clearspring ES - 706, Clopper Mill ES - 100, Cloverly ES - 308, Col. E. Brooke Lee MS - 818, Col. Zadok Magruder HS - 510, Cold Spring ES - 238, College Gardens ES - 229, Cresthaven ES - 808, Damascus ES - 702, Damascus HS - 701, Darnestown ES - 351, Diamond ES - 570, Dr. Charles Drew ES - 747, Dr. Sally K. Ride ES - 242, DuFief ES - 241, Earle B. Wood MS - 820, East Silver Spring ES - 756, Eastern MS - 775, Emory Grove Center - 890, Fairland ES - 303, Fallsmead ES - 233, Farmland ES - 219, Fields Road ES - 566, Flora M. Singer ES - 770, Flower Hill ES - 549, Flower Valley ES - 506, Forest Knolls ES - 803, Forest Oak MS - 248, Fox Chapel ES - 106, Francis Scott Key MS - 311, Gaithersburg ES - 553, Gaithersburg HS - 551, Gaithersburg MS - 554, Galway ES - 313, Garrett Park ES - 204, Georgian Forest ES - 786, Germantown ES - 102, Glen Haven ES - 767, Glenallan ES - 817, Goshen ES - 546, Great Seneca Creek ES - 340, Greencastle ES - 334, Greenwood ES - 512, Hallie Wells MS - 345, Harmony Hills ES - 797, Herbert Hoover MS - 228, Highland ES - 774, Highland View ES - 784, Jackson Road ES - 305, James Hubert Blake HS - 321, JoAnn Leleck ES at Broad Acres - 304, John F. Kennedy HS - 815, John Poole MS - 247, John T. Baker MS - 705, Jones Lane ES - 360, Judith A. Resnik ES - 514, Julius West MS - 211, Kemp Mill ES - 805, Kensington Parkwood ES - 783, Kingsview MS - 708, Lake Seneca ES - 108, Lakelands Park MS - 522, Lakewood ES - 209, Lathrop E. Smith Environmental Education Center - 990, Laytonsville ES - 051, Little Bennett ES - 336, Lois P. Rockwell ES - 156, Longview School SSAP - 951, Lucy V. Barnsley ES - 505, Luxmanor ES - 220, MacDonald Knolls Early Childhood Center - 793, Martin Luther King MS - 107, Maryvale ES - 210, Meadow Hall ES - 212, Mill Creek Towne ES - 556, Monocacy ES - 652, Montgomery Blair HS - 757, Montgomery Knolls ES - 776, Montgomery Village MS - 557, Neelsville MS - 115, New Hampshire Estates ES - 791, Newport Mill MS - 792, North Bethesda MS - 413, North Chevy Chase ES - 415, Northwest HS - 246, Northwood HS - 796, Oak View ES - 766, Oakland Terrace ES - 769, Olney ES - 502, Paint Branch HS - 315, Parkland MS - 812, Pine Crest ES - 761, Piney Branch ES - 749, Poolesville ES - 153, Poolesville HS - 152, Potomac ES - 601, Quince Orchard HS - 125, Rachel Carson ES - 159, Redland MS - 562, Regional Institute for Children and Adolescents (RICA) SSAP - 965, Richard Montgomery HS - 201, Ridgeview MS - 105, Ritchie Park ES - 227, Robert Frost MS - 237, Roberto W. Clemente MS - 157, Rock Creek Forest ES - 773, Rock Creek Valley ES - 819, Rock Terrace School SSAP - 916, Rock View ES - 795, Rockville HS - 230, Rocky Hill MS - 707, Rolling Terrace ES - 771, Ronald A. McNair ES - 158, Rosa M. Parks MS - 155, Roscoe R. Nix ES - 307, Rosemary Hills ES - 794, Rosemont ES - 555, S. Christa McAuliffe ES - 110, Sargent Shriver ES - 779, Seneca Valley HS - 104, Sequoyah ES - 565, Seven Locks ES - 603, Shady Grove MS - 521, Sherwood ES - 501, Sherwood HS - 503, Silver Creek MS – 835, Silver Spring International MS - 647, Sligo Creek ES - 517, Sligo MS - 778, Snowden Farm ES - 347, Somerset ES - 405, South Lake ES - 564, Spark M. Matsunaga ES - 523, Springbrook HS - 798, Stedwick ES - 568, Stephen Knolls School SSAP - 799, Stone Mill ES - 653, Stonegate ES - 316, Strathmore ES - 822, Strawberry Knoll ES - 569, Summit Hall ES - 563, Takoma Park ES - 754, Takoma Park MS - 755, Thomas Edison High School of Technology - 748, Thomas S. Wootton HS - 234, Thomas W. Pyle MS - 428, Thurgood Marshall ES - 244, Tilden MS - 232, Travilah ES - 216, Twinbrook ES - 206, Viers Mill ES - 772, Walt Whitman HS - 427, Walter Johnson HS - 424, Washington Grove ES - 552, Waters Landing ES - 109, Watkins Mill ES - 561, Watkins Mill HS - 545, Wayside ES - 235, Weller Road ES - 777, Westbrook ES - 408, Westland MS - 412, Westover ES - 504, Wheaton HS - 782, Wheaton Woods ES - 788, Whetstone ES - 558, White Oak MS - 811, William B. Gibbs, Jr. ES - 337, William H. Farquhar MS - 507, William Tyler Page ES - 312, Wilson Wims ES - 341, Winston Churchill HS - 602, Wood Acres ES - 417, Woodfield ES - 704, Woodlin ES - 764, Wyngate ES - 422]%$#$%PDF LIST TEST 2.0%$#$%
+%$@$%105%$@$%C:\Users\zacfm\OneDrive\Desktop\FORMS\FY 2020 General Field Trip Packet-20200424T154947Z-001\FY 2020 General Field Trip Packet\260-1--Fee Waiver Record.pdf%$@$%L-ALL SCHOOLS 5/2019%$@$%
+
+%$@$%105%$@$%C:\Users\zacfm\OneDrive\Desktop\FORMS\FY 2020 General Field Trip Packet-20200424T154947Z-001\FY 2020 General Field Trip Packet\Final June Field Trip Form--FY20.pdf%$@$%L-list123456789qoah%$@$%
+
+%$@$%105%$@$%C:\Users\zacfm\OneDrive\Desktop\FORMS\FY 2020 General Field Trip Packet-20200424T154947Z-001\FY 2020 General Field Trip Packet\Form 3 Parent-Guardian Approval for Trips MCPS Transportation is provided 555-6--FY20.pdf%$@$%L-This School%$@$%
+
+%$@$%105%$@$%C:\Users\zacfm\OneDrive\Desktop\FORMS\FY 2020 General Field Trip Packet-20200424T154947Z-001\FY 2020 General Field Trip Packet\Form 4 Non-MCPS Transportation  560-31--FY20.pdf%$@$%L-TEST%$@$%
+
+%$#$%108%$#$%CHECK_BOX--yes-no%$#$%Default Field Name%$#$%
+%$@$%108%$@$%C:\Users\zacfm\OneDrive\Desktop\FORMS\FY 2020 General Field Trip Packet-20200424T154947Z-001\FY 2020 General Field Trip Packet\260-1--Fee Waiver Record.pdf%$@$%C-5%$@$%
+
+%$@$%108%$@$%C:\Users\zacfm\OneDrive\Desktop\FORMS\FY 2020 General Field Trip Packet-20200424T154947Z-001\FY 2020 General Field Trip Packet\Final June Field Trip Form--FY20.pdf%$@$%C-5%$@$%
+
+%$#$%110%$#$%CHECK_BOX--yes-no%$#$%Default Field Name%$#$%
+%$@$%110%$@$%C:\Users\zacfm\OneDrive\Desktop\FORMS\FY 2020 General Field Trip Packet-20200424T154947Z-001\FY 2020 General Field Trip Packet\260-1--Fee Waiver Record.pdf%$@$%C-5-%$@$%
+
+%$@$%110%$@$%C:\Users\zacfm\OneDrive\Desktop\FORMS\FY 2020 General Field Trip Packet-20200424T154947Z-001\FY 2020 General Field Trip Packet\Final June Field Trip Form--FY20.pdf%$@$%C-6-%$@$%
+
+%$#$%112%$#$%CHECK_BOX-yes-no%$#$%Default Field Name%$#$%
+%$@$%112%$@$%C:\Users\zacfm\OneDrive\Desktop\FORMS\FY 2020 General Field Trip Packet-20200424T154947Z-001\FY 2020 General Field Trip Packet\260-1--Fee Waiver Record.pdf%$@$%C-5-%$@$%
+
+%$@$%112%$@$%C:\Users\zacfm\OneDrive\Desktop\FORMS\FY 2020 General Field Trip Packet-20200424T154947Z-001\FY 2020 General Field Trip Packet\Final June Field Trip Form--FY20.pdf%$@$%C-6-%$@$%
+
+%$#$%114%$#$%CHECK_BOX-test1-test2%$#$%Default Field Name%$#$%
+%$@$%114%$@$%C:\Users\zacfm\OneDrive\Desktop\FORMS\FY 2020 General Field Trip Packet-20200424T154947Z-001\FY 2020 General Field Trip Packet\260-1--Fee Waiver Record.pdf%$@$%C-5%$@$%
+
+%$@$%114%$@$%C:\Users\zacfm\OneDrive\Desktop\FORMS\FY 2020 General Field Trip Packet-20200424T154947Z-001\FY 2020 General Field Trip Packet\Final June Field Trip Form--FY20.pdf%$@$%C-6%$@$%
+
+%$#$%117%$#$%DATE%$#$%test Date Name%$#$%
+%$@$%117%$@$%C:\Users\zacfm\OneDrive\Desktop\FORMS\FY 2020 General Field Trip Packet-20200424T154947Z-001\FY 2020 General Field Trip Packet\260-1--Fee Waiver Record.pdf%$@$%D-3-4-5%$@$%
+
+%$@$%117%$@$%C:\Users\zacfm\OneDrive\Desktop\FORMS\FY 2020 General Field Trip Packet-20200424T154947Z-001\FY 2020 General Field Trip Packet\Final June Field Trip Form--FY20.pdf%$@$%D-5-7-9%$@$%
+
+%$#$%131%$#$%TEXT%$#$%test docx insert%$#$%
+%$@$%131%$@$%C:\Users\zacfm\OneDrive\Desktop\FORMS\FY 2020 General Field Trip Packet-20200424T154947Z-001\FY 2020 General Field Trip Packet\Chaperone Parking Information.docx%$@$%I-phs school%$@$%
+
