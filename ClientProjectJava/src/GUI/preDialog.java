@@ -96,10 +96,10 @@ public class preDialog {
 			public void actionPerformed(ActionEvent e) {
 				if(!folderPath.equals("")&&!newFolderPath.equals("")) {
 				if(String.valueOf(typeCh.getSelectedItem()).equals("General Field Trip")) {
-					setFilePath = "./res/GenSettings.txt";
+					setFilePath = doFileStuff.myPlace().getPath()+"/GenSettings.txt";
 				}
 				else {
-					setFilePath = "./res/OverOutSettings.txt";
+					setFilePath = doFileStuff.myPlace().getPath()+"/OverOutSettings.txt";
 				}
 				try {
 					new gui(setFilePath,folderPath,newFolderPath);

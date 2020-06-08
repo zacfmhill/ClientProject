@@ -673,12 +673,12 @@ private void dAddMake() {
 
  		int id = 0;
  		try {
- 			FileReader fr = new FileReader(new File("./res/IDuserProfiling.txt"));
+ 			FileReader fr = new FileReader(new File(doFileStuff.myPlace(),"IDuserProfiling.txt"));
  			BufferedReader br = new BufferedReader(fr);
  	 		String data = br.readLine();
  	 		id  = Integer.parseInt(data);
  	 		br.close();
- 		    FileWriter writer = new FileWriter("./res/IDuserProfiling.txt");
+ 		    FileWriter writer = new FileWriter(doFileStuff.myPlace().getPath()+"/IDuserProfiling.txt");
  		    writer.write((id+1)+"");
  		    writer.close();
  		    } 
@@ -822,7 +822,7 @@ private void dAddMake() {
 			if(0 == JOptionPane.showConfirmDialog(frame, "Are you sure you want to reset all the fields back to the default for 2020?")) {
 				
 				try {
-					File master = new File("./res/master.txt");
+					File master = new File(doFileStuff.myPlace(),"master.txt");
 					Files.copy(master.toPath(), settFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
 				} catch (Exception e1) {
 					// TODO Auto-generated catch block
@@ -847,7 +847,7 @@ private void dAddMake() {
         FieldAdd=new JMenuItem("Add Field");
         save=new JMenuItem("Save");
         preview = new JMenuItem("Preview");
-        help = new JMenuItem("Help");
+       // help = new JMenuItem("Help");
        // Fmenu.add(FileAdd);
        // Fmenu.addSeparator();
        // Fmenu.add(save);
@@ -866,14 +866,14 @@ private void dAddMake() {
         Fmenu.addSeparator();
         }
         
-        Fmenu.add(help);
+        //Fmenu.add(help);
        // Fmenu.addSeparator();
         //file options end
         FileAdd.addActionListener(this);  
         FieldAdd.addActionListener(this);  
         save.addActionListener(this);    
         preview.addActionListener(this);
-        help.addActionListener(this);
+       // help.addActionListener(this);
         Remove.addActionListener(this);
         Rename.addActionListener(this);
         Default.addActionListener(this);
@@ -894,19 +894,19 @@ private void dAddMake() {
 				}
 			//comment syntax
 				else if(curr.substring(0,2).contentEquals("??")) {
-					System.out.println("Comment: " + curr.substring(2));
+					//System.out.println("Comment: " + curr.substring(2));
 				}
 			//tag syntax
 				else if(curr.substring(0,5).equals("%$#$%")) {
 					int ID = Integer.parseInt(curr.substring(5,curr.indexOf("%$#$%",5)));
 					curr = curr.replace("DIRBEFOREREPLACEGEN", filePathToNew);
-					System.out.println(ID+ " "+ curr);
+					//System.out.println(ID+ " "+ curr);
 					
 					fieldMap.put(ID, curr);
 				}
 			}
 			catch(Exception e) {
-				System.out.println("Malformed ID in File Settings -- " + curr);
+				//System.out.println("Malformed ID in File Settings -- " + curr);
 			}	
 		}
 		sc.close();
@@ -1050,6 +1050,7 @@ private void dAddMake() {
 		return "Malformed Input String Led to Nick Error";
 	}
 	public static void main(String[] args) throws FileNotFoundException {  
+		doFileStuff.makeEnsureFiles();
 		handleID();
 		new preDialog();
 	} 
