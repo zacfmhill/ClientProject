@@ -72,17 +72,16 @@ public class PDFedit {
         	
         	//dropdown
         	if(field.getFieldType().equals("Ch")) {
-        	//	System.out.println(((PDComboBox)field).getOptionsDisplayValues() + " -");
         		((PDComboBox)field).setValue(fieldValue);
         	}
         	//checkbox
         	else if(field.getFieldType().equals("Btn")) {
-        		System.out.println(((PDButton)field).getOnValues());
         		((PDCheckBox)field).setValue(fieldValue);
         	}
         	//text
         	else {
             field.setValue(fieldValue);
+            
         	}
         }
         else {
@@ -95,7 +94,6 @@ public class PDFedit {
 		PDAcroForm acroForm = docCatalog.getAcroForm();
 		PDField field = acroForm.getField(fieldName);
 		if(field.getFieldType().equals("Ch")) {
-			System.out.println((((PDComboBox)field).getOptionsDisplayValues()));
         		return ""+(((PDComboBox)field).getOptionsDisplayValues());
         }
 		return null;
@@ -104,6 +102,12 @@ public class PDFedit {
 	public List getFields(){
         PDAcroForm acroForm = docCatalog.getAcroForm();
         List allFieldsList = acroForm.getFields();
+        try {
+			document.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         return allFieldsList;
         
 	}
@@ -121,7 +125,6 @@ public class PDFedit {
 	//saves the pdf to the given path
 	public void save(String path) throws Exception {
 		document.save(path);
-		//document.close();
 	}
 	public String strip() throws Exception {
 		PDFTextStripper pdfStripper = new PDFTextStripper();

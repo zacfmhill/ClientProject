@@ -28,6 +28,7 @@ public class DOCXedit {
 	private XWPFDocument docx;
 	private XWPFWordExtractor extractor;
 	private XWPFRun run;
+	
 	private XWPFParagraph paragraph;
 	private List<XWPFTable> tableList;
 	private XWPFTableRow row;
@@ -55,7 +56,7 @@ public class DOCXedit {
 	public DOCXedit(String myFileName) throws Exception{
 		fileName = myFileName;
 		file = new File(fileName);
-		FileInputStream FIS= new FileInputStream(fileName);
+		FileInputStream FIS= new FileInputStream(file);
 		docx = new XWPFDocument(FIS);
 		extractor = new XWPFWordExtractor(docx);
 	}
@@ -190,6 +191,7 @@ public class DOCXedit {
 	//write message to a cell in a table in a doc
 	public void writeTable(int tableNum, int settingRow, int settingCol, String message) throws Exception {
 		outStream = new FileOutputStream(file);
+		
 		tableList = docx.getTables();
 		table = tableList.get(tableNum);
 		row = table.getRow(settingRow);

@@ -19,15 +19,16 @@ public class Receiver {
 		return type;
 		}
 		catch(Exception e){
-			System.out.println("Invalid File Format!!");
 			return null;
 		}
 	}
 	
 	
 	public static void send(String content,ArrayList<String> fileLines) {
-		System.out.println("Recieved: "+ content);
 		String filePathNew = GUI.gui.filePathToNew;
+		if(content.equals(null)) {
+			content = " ";
+		}
 		for(String str:fileLines) {
 			String[] splits = str.split("%");
 			ArrayList<String> parms = new ArrayList<String>();
@@ -35,25 +36,11 @@ public class Receiver {
 				if(!s.contentEquals("$@$")&&s.length()>0)
 					parms.add(s);
 			}
-			System.out.println(parms);
-			//checks if this is a valid file before sending it off!!!
-			File file;
-			File copy;
-			try {
-				file = new File(parms.get(1));
-				String fileName = file.getName();
-				copy = new File(filePathNew+ "\\" +fileName);
-				Files.copy(file.toPath(), copy.toPath(), StandardCopyOption.REPLACE_EXISTING);
-				String filePath = copy.getAbsolutePath();
+				File file = new File(parms.get(1));
+				String filePath = file.getPath();
 				String type = getFileType(parms.get(1));
 				String ID = parms.get(2);
 				interpEdit(type,filePath,content,ID);	
-			}
-			catch (Exception e) {
-				gui.invalid();
-				
-			}
-			
 		}
 	}
 	
@@ -63,13 +50,15 @@ public class Receiver {
 			case "DOCX":
 				sendDOCX(filePath,content,ID);
 				break;
+			case "DOC":
+				sendDOCX(filePath,content,ID);
+				break;
 		//if type XLSX
 			case "XLSX":
 				sendXLSX(filePath,content,ID);
 				break;
 		//if type PDF
 			case "PDF":
-				System.out.println(filePath);
 				sendPDF(filePath,content,ID);
 				break;
 		}
@@ -89,18 +78,24 @@ public class Receiver {
 			docxEdit.writeTable(tableNum, row, col, content);
 		}
 //insert text
-		else if(typeDo.contentEquals("I")) {
+		else if(typeDo.equals("I")) {
 			String insertingAfter = IDparms[0];
 			docxEdit.writeTextAdd(content, insertingAfter);
 		}
 //replace text
-		else if(typeDo.contentEquals("R")) {
+		else if(typeDo.equals("R")) {
 			String replacing = IDparms[0];
+				while(content.length()<replacing.length()) {
+					content = " " + content + " ";
+				}
 			docxEdit.writeTextReplace(content, replacing);
+			try {
+				docxEdit.writeTextReplace(content, replacing);
+			}
+			catch(Exception e){}
 		}
 //issue with current Tagging
 		else {
-			System.out.println("Error, issue with current tagging!!");
 		}
 		}
 		catch (Exception e) {
@@ -117,8 +112,8 @@ public class Receiver {
 			XLSXedit xlsxEdit;
 			if(typeDo.equals("C")) {
 				//-1 to get to start count @ 0
-				int row = Integer.parseInt(IDparms[0]) -1;
-				int col = Integer.parseInt(IDparms[1]) -1;
+				int row = Integer.parseInt(IDparms[0].strip()) -1;
+				int col = Integer.parseInt(IDparms[1].strip()) -1;
 				xlsxEdit = new XLSXedit(filePath);
 				xlsxEdit.write(row, col, content);
 			}
@@ -146,10 +141,12 @@ public class Receiver {
 				case "C":
 					pdfTest.setField(ID, content);
 					pdfTest.save(filePath);
+					break;
 			//combobox
 				case "L":
 					pdfTest.setField(ID, content);
 					pdfTest.save(filePath);
+					break;
 			//Date
 				case "D":
 					String[] contArr = content.split("/");
@@ -158,10 +155,12 @@ public class Receiver {
 						pdfTest.setField(idArr[i], contArr[i]);
 					}
 					pdfTest.save(filePath);
+					break;
 			//text area
 				case "T":
 					pdfTest.setField(ID, content);
 					pdfTest.save(filePath);
+					break;
 					
 			}
 		}

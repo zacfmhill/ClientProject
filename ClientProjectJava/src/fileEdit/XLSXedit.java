@@ -3,6 +3,10 @@ package fileEdit;
 import java.io.*;
 import java.io.*;
 import java.util.*;
+
+import org.apache.poi.hssf.usermodel.HSSFRow;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.xssf.usermodel.*;
 
@@ -40,16 +44,23 @@ public class XLSXedit {
 		//opens given XML File for operating on
 		fileName = myFileName;
 		file = new File(fileName);
-		FileInputStream fIS = new FileInputStream(file);
-		workbook = new XSSFWorkbook(fIS);
-	    spreadsheet = workbook.getSheetAt(0);
 	}
 	//write file stream to excel doc
 	public void write(int rowNum, int colNum,String value) throws Exception {
-		out = new FileOutputStream(file);
-		XSSFRow row = spreadsheet.createRow(rowNum);
-		row.createCell(colNum).setCellValue(value);
-		workbook.write(out);
+		if(!value.equals(" ")) {
+			FileInputStream fIS = new FileInputStream(file);
+			workbook = new XSSFWorkbook(fIS);
+			spreadsheet = workbook.getSheetAt(0);
+			out = new FileOutputStream(file);
+			XSSFRow row = spreadsheet.getRow(rowNum);
+			row.getCell(colNum).setCellValue(value);
+			workbook.write(out);
+			out.close();
+			workbook.close();
+			fIS.close();
+			
+		}
+		
 	}
 	//close file stream
 	public void close() throws Exception {

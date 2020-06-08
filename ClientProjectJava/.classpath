@@ -10,7 +10,7 @@
 	<classpathentry kind="lib" path="C:/Users/zacfm/OneDrive/Documents/GitHub/ClientProject/poi-bin-3.12-20150511/poi-3.12/poi-3.12-20150511.jar"/>
 	<classpathentry kind="lib" path="C:/Users/zacfm/OneDrive/Documents/GitHub/ClientProject/poi-bin-3.12-20150511/poi-3.12/poi-examples-3.12-20150511.jar"/>
 	<classpathentry kind="lib" path="C:/Users/zacfm/OneDrive/Documents/GitHub/ClientProject/poi-bin-3.12-20150511/poi-3.12/poi-excelant-3.12-20150511.jar"/>
-	<classpathentry kind="lib" path="C:/Users/zacfm/OneDrive/Documents/GitHub/ClientProject/poi-bin-3.12-20150511/poi-3.12/poi-ooxml-3.12-20150511.jar"/>
+	<classpathentry kind="lib" path="C:/Users/zacfm/OneDrive/Documents/GitHub/ClientProject/poi-bin-3.12-20150511/poi-3.12/poi-ooxml-3.12-20150511.jar" sourcepath="C:/Users/zacfm/OneDrive/Documents/GitHub/ClientProject/poi-bin-3.12-20150511/poi-3.12/poi-ooxml-3.12-20150511.jar"/>
 	<classpathentry kind="lib" path="C:/Users/zacfm/OneDrive/Documents/GitHub/ClientProject/poi-bin-3.12-20150511/poi-3.12/poi-ooxml-schemas-3.12-20150511.jar"/>
 	<classpathentry kind="lib" path="C:/Users/zacfm/OneDrive/Documents/GitHub/ClientProject/poi-bin-3.12-20150511/poi-3.12/poi-scratchpad-3.12-20150511.jar"/>
 	<classpathentry kind="lib" path="C:/Users/zacfm/OneDrive/Documents/GitHub/ClientProject/APACHE-pdfbox/fontbox-2.0.19.jar"/>

@@ -119,6 +119,7 @@ public class preDialog {
 				JFileChooser fileChooser = new JFileChooser();
 	            fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 	            int option = fileChooser.showOpenDialog(preDial);
+	            
 	            if(option == JFileChooser.APPROVE_OPTION){
 	               File file = fileChooser.getSelectedFile();
 	               folderPath = file.getPath();

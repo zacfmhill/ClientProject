@@ -26,7 +26,7 @@ public class GeneratorPDF{
 			while(fieldIterator.hasNext()) {
 				PDField currField = (PDField)fieldIterator.next();
 				if(currField.getFieldType().equals("Tx")) {
-					pdfGen.setField(currField.getPartialName(), currField.getPartialName());
+					//pdfGen.setField(currField.getPartialName(), currField.getPartialName());
 				}
 				else {
 					others.add(currField.getFieldType()+" - Field Name/ID: "+currField.getFullyQualifiedName());

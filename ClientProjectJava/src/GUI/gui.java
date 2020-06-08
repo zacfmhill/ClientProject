@@ -37,7 +37,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTR;
 
-import fileEdit.GeneratorPDF;
+//import fileEdit.GeneratorPDF;
 import fileEdit.PDFgetCombos;
 import fileEdit.Receiver;
 
@@ -57,7 +57,7 @@ public class gui extends JFrame implements ActionListener {
 	private String setFilePath;
 	private File settFile;
 	private JFrame dAdd;
-	private JButton bGen;
+	//private JButton bGen;
 	private JLabel genLabel;
 	private JTextArea placing;
 	private JTextArea fileName;
@@ -74,12 +74,10 @@ public class gui extends JFrame implements ActionListener {
 	private static String pass = "goggles";
 
 	
-	public static void invalid() {
-		JOptionPane.showMessageDialog(frame,"Invalid File Location !!!");  
-	}
+	
 	public boolean getExtension(String filename) {
 		String ext = filename.substring(filename.lastIndexOf(".")+1);
-	    if(ext.equals("pdf")||ext.equals("xlsx")||ext.equals("docx")) {
+	    if(ext.equals("pdf")||ext.equals("xlsx")||ext.equals("docx")||ext.equals("doc")) {
 	    	return true;
 	    }
 	    return false;
@@ -105,7 +103,16 @@ public class gui extends JFrame implements ActionListener {
 			    for (File child : directoryListing) {
 			    	if(getExtension(child.getPath())) {
 			    	fileInFolder.add(child);
-			    	System.out.println(child.getPath());
+					File copy = null;
+					try {	
+						String fileName = child.getName();
+						copy = new File(newPath+ "\\" +fileName);
+						Files.copy(child.toPath(), copy.toPath(), StandardCopyOption.REPLACE_EXISTING);
+					}
+					catch (Exception e) {
+						e.printStackTrace();
+						
+					}
 			    	}
 			    }
 			  }
@@ -163,6 +170,9 @@ for(Map.Entry<Integer,String> m:fieldMap.entrySet()){
 	                return location ;
 	            }
 	        };
+	        	if(m.getKey() == 0) {
+	        		splitPane.setVisible(false);
+	        	}
 	        	splitPane.setPreferredSize(new Dimension(750, 80));
 	        	splitPane.setMaximumSize(new Dimension(780, 70));
 	        	splitPane.setEnabled(false);
@@ -196,15 +206,12 @@ for(Map.Entry<Integer,String> m:fieldMap.entrySet()){
 			listView.add(splitPane);
 			
 			
-//Purely Testing, to make sure correct objects assigned!
-	      //  for(Map.Entry<Integer,Component> fie:idToCompMap.entrySet()){  
-	    //    	System.out.println(fie.getKey() + " ::: "+fie.getValue());
-	    //    }
 	        
 //MAKE IT SCROLLABLE BY PUTTING EVERYTHING IN SCROLL PANE	        
 	        JScrollPane scrollPane = new JScrollPane(listView);
 	        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);  
 	        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);  
+	        scrollPane.getVerticalScrollBar().setUnitIncrement(25);
 	        
 	        
 //FRAME FINAL SETUP
@@ -232,7 +239,7 @@ private void dRemMake() {
     JButton del = new JButton("Delete");
     del.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
-			if(0 == JOptionPane.showConfirmDialog(dRem, "Confirm Deleting" + box.getSelectedItem().toString())) {
+			if(0 == JOptionPane.showConfirmDialog(dRem, "Confirm Deleting "  + box.getSelectedItem().toString())) {
 			deleteMenCom(box.getSelectedItem().toString());
 			dRem.setVisible(false);
            	frame.setVisible(false);
@@ -261,7 +268,7 @@ private void dRemMake() {
 }
 private void deleteMenCom(String comboOption) {
 	try {
-	String idText = comboOption.substring(comboOption.lastIndexOf(":")+1);
+	String idText = comboOption.substring(comboOption.lastIndexOf(":")+2);
 	int id = Integer.parseInt(idText);
 	fieldMap.remove(id);
 	inputToFileMap.remove(id);
@@ -289,7 +296,7 @@ private JComboBox getComboItems() {
 	for(Map.Entry<Integer,String> m:fieldMap.entrySet()){  
 		try {
 			String nick = getNick(m.getValue());
-			ret.addItem(nick + " :"+m.getKey());
+			ret.addItem(nick + " : "+m.getKey());
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -368,10 +375,10 @@ private void dAddMake() {
 	            	panel.add(panelSetAll);
 	            	
 	               if(typeCh.getSelectedItem().toString().contains("pdf")) {
-	            	   	genLabel.setVisible(true);
-	            	   	bGen.setVisible(true);
-	            	   	panel.add(genLabel);
-	       		    	panel.add(bGen);
+	            	   	//genLabel.setVisible(true);
+	            	  // 	bGen.setVisible(true);
+	            	  // 	panel.add(genLabel);
+	       		    	//panel.add(bGen);
 	       		    	for(File file: fileInFolder) {
 	       		    		String name = file.getName();
 	       		    		String ext = name.substring(name.indexOf(".")+1);
@@ -405,8 +412,8 @@ private void dAddMake() {
 	       		    	}
 	               }
 	               else if(typeCh.getSelectedItem().toString().contains("docx")) {
-	            	   genLabel.setVisible(false);
-	            	   bGen.setVisible(false);
+	            	  // genLabel.setVisible(false);
+	            	  // bGen.setVisible(false);
 	            	   for(File file: fileInFolder) {
 		       		    	String name = file.getName();
 		       		    	String ext = name.substring(name.indexOf(".")+1);
@@ -436,8 +443,8 @@ private void dAddMake() {
 		       		    }
 	               }
 	               else if(typeCh.getSelectedItem().toString().contains("xlsx")) {
-	            	   genLabel.setVisible(false);
-	            	   bGen.setVisible(false);
+	            	 //  genLabel.setVisible(false);
+	            	 //  bGen.setVisible(false);
 	            	   for(File file: fileInFolder) {
 	       		    		String name = file.getName();
 	       		    		String ext = name.substring(name.indexOf(".")+1);
@@ -473,17 +480,19 @@ private void dAddMake() {
 	        });
 		    
 		    
-		    genLabel = new JLabel("Generate a PDF from a file that has every field filled in with it's ID");
+		  //  genLabel = new JLabel("Generate a PDF from a file that has every field filled in with its ID");
 		  //  genLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
-		    genLabel.setVisible(false);
-		    bGen = new JButton("Generate Field Label PDF");
-		    bGen.setVisible(false);
+		 //   genLabel.setVisible(false);
+		 //   bGen = new JButton("Generate Field Label PDF");
+		 //   bGen.setVisible(false);
 		   // bGen.setAlignmentX(Component.CENTER_ALIGNMENT);
-		    bGen.addActionListener(new genActionListener());
+		  //  bGen.addActionListener(new genActionListener());
 		    
 		    
 
 	        JScrollPane scrollAdd = new JScrollPane(panel);
+	        scrollAdd.getVerticalScrollBar().setUnitIncrement(300);
+
 	        scrollAdd.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);  
 	        scrollAdd.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 	        
@@ -679,30 +688,30 @@ private void dAddMake() {
 		return id;
  	}
 	
-	public class genActionListener implements ActionListener{
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				JFileChooser fileChooser=new JFileChooser();
-				FileNameExtensionFilter filter = new FileNameExtensionFilter("PDF", "pdf");
-				fileChooser.setFileFilter(filter);
-				fileChooser.addChoosableFileFilter(filter);
-				fileChooser.setCurrentDirectory(new File(folderPath));
-			    int i=fileChooser.showOpenDialog(dAdd);    
-			    if(i==JFileChooser.APPROVE_OPTION){    
-			        File file =fileChooser.getSelectedFile();    
-			        String filepath= file.getPath();   
-			        ArrayList<String> others;
-			        others = GeneratorPDF.generate(filepath);
-			        others.remove(1);
-			        JTextArea jt = new JTextArea();
-			        for(String str: others) {
-			        	jt.setText(jt.getText()+str+"\n");
-			        }
-			        JOptionPane.showMessageDialog(dAdd,jt);
-			    }
-			}
-	}
+//	public class genActionListener implements ActionListener{
+//			
+//			@Override
+//			public void actionPerformed(ActionEvent e) {
+//				JFileChooser fileChooser=new JFileChooser();
+//				FileNameExtensionFilter filter = new FileNameExtensionFilter("PDF", "pdf");
+//				fileChooser.setFileFilter(filter);
+//				fileChooser.addChoosableFileFilter(filter);
+//				fileChooser.setCurrentDirectory(new File(folderPath));
+//			    int i=fileChooser.showOpenDialog(dAdd);    
+//			    if(i==JFileChooser.APPROVE_OPTION){    
+//			        File file =fileChooser.getSelectedFile();    
+//			        String filepath= file.getPath();   
+//			        ArrayList<String> others;
+//			        others = GeneratorPDF.generate(filepath);
+//			        others.remove(1);
+//			        JTextArea jt = new JTextArea();
+//			        for(String str: others) {
+//			        	jt.setText(jt.getText()+str+"\n");
+//			        }
+//			        JOptionPane.showMessageDialog(dAdd,jt);
+//			    }
+//			}
+//	}
 
 
 
@@ -719,27 +728,22 @@ private void dAddMake() {
 		public void actionPerformed(ActionEvent e) {
 			  for(Map.Entry m:idToCompMap.entrySet()){  
 	        	 Component currComp = (Component) m.getValue();
-	        	 System.out.println(currComp);
 	        	 //if current item is a textArea
 	        	 if(currComp instanceof JTextArea) {
 	        		 JTextArea curr = (JTextArea) currComp;
 	        		 String content = curr.getText();
-	        		 System.out.println("  >TextArea:::" + content);
 	        		 Receiver.send(content,inputToFileMap.get(m.getKey()));
 	        	 }
 	        	
 	        	 //if current item is a Panel
 	        	 else {
 	        		 JPanel currPan = (JPanel) currComp;
-	      //  		 System.out.println("Panel");
 	        		 Component cFirs = currPan.getComponents()[0];
-	        		 System.out.println("  >"+ cFirs);
 	        		 
 	        		 //if combo box
 	        		 if(cFirs instanceof JComboBox) {
 	        			 JComboBox curr = (JComboBox)cFirs;
 	        			 String content = String.valueOf(curr.getSelectedItem());
-	        			 System.out.println("    >ComboBox:::" + content);
 	        			 Receiver.send(content,inputToFileMap.get(m.getKey()));
 	        			 
 	        		 }
@@ -758,7 +762,6 @@ private void dAddMake() {
 	        			 if(content.equals("")) {
 	        				 content = "Off";
 	        			 }
-	        			 System.out.println("    >CheckBox:::"+content);
 	        			 Receiver.send(content, inputToFileMap.get(m.getKey()));
 	        		 }
 	        		 //date
@@ -776,10 +779,7 @@ private void dAddMake() {
 	        			 }
 	        			 content = content.substring(0,content.length()-1);
 	        			 Receiver.send(content, inputToFileMap.get(m.getKey()));
-	        			 System.out.println("    >DateChooser:::"+content);
-	        		 }
-	        		 else {
-	        			 System.out.println("    >ERROR COULD NOT FIND PANEL TYPE AT PROGID "+m.getKey());
+
 	        		 }
 	        		 
 	        	 }
@@ -804,7 +804,6 @@ private void dAddMake() {
 		    if(i==JFileChooser.APPROVE_OPTION){    
 		        File file =fileChooser.getSelectedFile();    
 		        String filepath= file.getPath();    
-		        System.out.println(filepath);
 		    }
 		}
 		else if (e.getSource()== FieldAdd) {
@@ -887,11 +886,11 @@ private void dAddMake() {
 		Scanner sc = new Scanner(settFile); 
 		while(sc.hasNextLine()) {
 			String curr = sc.nextLine();
-			//if it's an ID tag
+		
 			try {
 			//Empty Space Syntax
 				if(curr.contentEquals("")) {
-					System.out.println();
+					//System.out.println();
 				}
 			//comment syntax
 				else if(curr.substring(0,2).contentEquals("??")) {
@@ -900,7 +899,9 @@ private void dAddMake() {
 			//tag syntax
 				else if(curr.substring(0,5).equals("%$#$%")) {
 					int ID = Integer.parseInt(curr.substring(5,curr.indexOf("%$#$%",5)));
+					curr = curr.replace("DIRBEFOREREPLACEGEN", filePathToNew);
 					System.out.println(ID+ " "+ curr);
+					
 					fieldMap.put(ID, curr);
 				}
 			}
@@ -919,12 +920,12 @@ private void dAddMake() {
 				if(curr.length()>5 && curr.substring(0,5).equals("%$@$%")) {
 					int currID = Integer.parseInt(curr.substring(5,curr.indexOf("%$@$%",5)));
 					if(currID == progID) {
+						curr = curr.replace("DIRBEFOREREPLACEGEN", filePathToNew);
 						progIDStrings.add(curr);
 					}
 				}
 			}
 			catch (Exception e) {
-				System.out.println("Malformed data in File Settings --> " + curr);
 			}
 			inputToFileMap.put(new Integer(progID), progIDStrings);
 		}
@@ -1045,7 +1046,6 @@ private void dAddMake() {
 				return text.substring(indexStart,indexEnd);
 			}
 			catch(Exception E) {
-				System.out.println("Malformed data in Settings File --> "+text);
 			}
 		return "Malformed Input String Led to Nick Error";
 	}
