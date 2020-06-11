@@ -51,7 +51,7 @@ public class preDialog {
 		
 		preDial.setLayout( new FlowLayout() );  
 		String[] ops = {"User","Admin"};
-		int choice = JOptionPane.showOptionDialog(preDial, "User or Editor?", "Editor Login", 1, 1, null,ops , null);
+		int choice = JOptionPane.showOptionDialog(preDial, "User or Admin?", "Admin Login", 1, 1, null,ops , null);
 		if(choice == 1) {
 			String passEnter = JOptionPane.showInputDialog("Enter the PIN");
 			if(gui.setAllowed(passEnter)) {

@@ -86,7 +86,7 @@ public class Receiver {
 		else if(typeDo.equals("R")) {
 			String replacing = IDparms[0];
 				while(content.length()<replacing.length()) {
-					content = " " + content + " ";
+					content = " " + content + "  ";
 				}
 			docxEdit.writeTextReplace(content, replacing);
 			try {

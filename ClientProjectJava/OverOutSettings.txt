@@ -41,14 +41,14 @@
 %$#$%1%$#$%COMBO_BOX[,-- Choose One --, A. Mario Loiederman MS - 787, Albert Einstein HS - 789, Alternative Education Programs - 239, Arcola ES - 790, Argyle MS - 823, Ashburton ES - 425, Bannockburn ES - 420, Bayard Rustin ES - 346, Beall ES - 207, Bel Pre ES - 780, Bells Mill ES - 607, Belmont ES - 513, Benjamin Banneker MS - 333, Bethesda ES - 401, Bethesda-Chevy Chase HS - 406, Beverly Farms ES - 226, Bradley Hills ES - 410, Briggs Chaney MS - 335, Brooke Grove ES - 518, Brookhaven ES - 807, Brown Station ES - 559, Burning Tree ES - 419, Burnt Mills ES - 309, Burtonsville ES - 302, Cabin John MS - 606, Candlewood ES - 508, Cannon Road ES - 310, Capt. James Daly ES - 111, Carderock Springs ES - 604, Carl Sandburg Learning Center SSAP - 215, Cashell ES - 511, Cedar Grove ES - 703, Chevy Chase ES - 403, Clarksburg ES - 101, Clarksburg HS - 249, Clearspring ES - 706, Clopper Mill ES - 100, Cloverly ES - 308, Col. E. Brooke Lee MS - 818, Col. Zadok Magruder HS - 510, Cold Spring ES - 238, College Gardens ES - 229, Cresthaven ES - 808, Damascus ES - 702, Damascus HS - 701, Darnestown ES - 351, Diamond ES - 570, Dr. Charles Drew ES - 747, Dr. Sally K. Ride ES - 242, DuFief ES - 241, Earle B. Wood MS - 820, East Silver Spring ES - 756, Eastern MS - 775, Emory Grove Center - 890, Fairland ES - 303, Fallsmead ES - 233, Farmland ES - 219, Fields Road ES - 566, Flora M. Singer ES - 770, Flower Hill ES - 549, Flower Valley ES - 506, Forest Knolls ES - 803, Forest Oak MS - 248, Fox Chapel ES - 106, Francis Scott Key MS - 311, Gaithersburg ES - 553, Gaithersburg HS - 551, Gaithersburg MS - 554, Galway ES - 313, Garrett Park ES - 204, Georgian Forest ES - 786, Germantown ES - 102, Glen Haven ES - 767, Glenallan ES - 817, Goshen ES - 546, Great Seneca Creek ES - 340, Greencastle ES - 334, Greenwood ES - 512, Hallie Wells MS - 345, Harmony Hills ES - 797, Herbert Hoover MS - 228, Highland ES - 774, Highland View ES - 784, Jackson Road ES - 305, James Hubert Blake HS - 321, JoAnn Leleck ES at Broad Acres - 304, John F. Kennedy HS - 815, John Poole MS - 247, John T. Baker MS - 705, Jones Lane ES - 360, Judith A. Resnik ES - 514, Julius West MS - 211, Kemp Mill ES - 805, Kensington Parkwood ES - 783, Kingsview MS - 708, Lake Seneca ES - 108, Lakelands Park MS - 522, Lakewood ES - 209, Lathrop E. Smith Environmental Education Center - 990, Laytonsville ES - 051, Little Bennett ES - 336, Lois P. Rockwell ES - 156, Longview School SSAP - 951, Lucy V. Barnsley ES - 505, Luxmanor ES - 220, MacDonald Knolls Early Childhood Center - 793, Martin Luther King MS - 107, Maryvale ES - 210, Meadow Hall ES - 212, Mill Creek Towne ES - 556, Monocacy ES - 652, Montgomery Blair HS - 757, Montgomery Knolls ES - 776, Montgomery Village MS - 557, Neelsville MS - 115, New Hampshire Estates ES - 791, Newport Mill MS - 792, North Bethesda MS - 413, North Chevy Chase ES - 415, Northwest HS - 246, Northwood HS - 796, Oak View ES - 766, Oakland Terrace ES - 769, Olney ES - 502, Paint Branch HS - 315, Parkland MS - 812, Pine Crest ES - 761, Piney Branch ES - 749, Poolesville ES - 153, Poolesville HS - 152, Potomac ES - 601, Quince Orchard HS - 125, Rachel Carson ES - 159, Redland MS - 562, Regional Institute for Children and Adolescents (RICA) SSAP - 965, Richard Montgomery HS - 201, Ridgeview MS - 105, Ritchie Park ES - 227, Robert Frost MS - 237, Roberto W. Clemente MS - 157, Rock Creek Forest ES - 773, Rock Creek Valley ES - 819, Rock Terrace School SSAP - 916, Rock View ES - 795, Rockville HS - 230, Rocky Hill MS - 707, Rolling Terrace ES - 771, Ronald A. McNair ES - 158, Rosa M. Parks MS - 155, Roscoe R. Nix ES - 307, Rosemary Hills ES - 794, Rosemont ES - 555, S. Christa McAuliffe ES - 110, Sargent Shriver ES - 779, Seneca Valley HS - 104, Sequoyah ES - 565, Seven Locks ES - 603, Shady Grove MS - 521, Sherwood ES - 501, Sherwood HS - 503, Silver Creek MS – 835, Silver Spring International MS - 647, Sligo Creek ES - 517, Sligo MS - 778, Snowden Farm ES - 347, Somerset ES - 405, South Lake ES - 564, Spark M. Matsunaga ES - 523, Springbrook HS - 798, Stedwick ES - 568, Stephen Knolls School SSAP - 799, Stone Mill ES - 653, Stonegate ES - 316, Strathmore ES - 822, Strawberry Knoll ES - 569, Summit Hall ES - 563, Takoma Park ES - 754, Takoma Park MS - 755, Thomas Edison High School of Technology - 748, Thomas S. Wootton HS - 234, Thomas W. Pyle MS - 428, Thurgood Marshall ES - 244, Tilden MS - 232, Travilah ES - 216, Twinbrook ES - 206, Viers Mill ES - 772, Walt Whitman HS - 427, Walter Johnson HS - 424, Washington Grove ES - 552, Waters Landing ES - 109, Watkins Mill ES - 561, Watkins Mill HS - 545, Wayside ES - 235, Weller Road ES - 777, Westbrook ES - 408, Westland MS - 412, Westover ES - 504, Wheaton HS - 782, Wheaton Woods ES - 788, Whetstone ES - 558, White Oak MS - 811, William B. Gibbs, Jr. ES - 337, William H. Farquhar MS - 507, William Tyler Page ES - 312, Wilson Wims ES - 341, Winston Churchill HS - 602, Wood Acres ES - 417, Woodfield ES - 704, Woodlin ES - 764, Wyngate ES - 422]%$#$%School Name%$#$%
 %$#$%2%$#$%TEXT%$#$%Teacher Sponsor%$#$%
 %$#$%3%$#$%TEXT%$#$%Trip Name%$#$%
-%$#$%4%$#$%DATE%$#$%Trip Date(s)%$#$%
+%$#$%4%$#$%TEXT%$#$%Trip Date(s)%$#$%
 %$#$%5%$#$%TEXT%$#$%Trip Fee%$#$%
 %$#$%6%$#$%TEXT%$#$%Fee Per Student%$#$%
 %$#$%7%$#$%TEXT%$#$%Grade Level/Group%$#$%
 %$#$%8%$#$%TEXT%$#$%Number Of Students%$#$%
 %$#$%9%$#$%TEXT%$#$%Time Of Departure%$#$%
 %$#$%10%$#$%TEXT%$#$%Time Of Arrival To School%$#$%
-%$#$%11%$#$%CHECK_BOX-MCPS Bus?-MCPS Approved Bus Carrier(ONLY Form 4)%$#$%Transportation Type:(Next Few Boxes)%$#$%
+%$#$%11%$#$%CHECK_BOX-MCPS Bus?%$#$%Transportation Type:(Next Few Boxes)%$#$%
 %$#$%12%$#$%CHECK_BOX-MCPS Approved Bus Carrier?%$#$%Transportation Type: pt2%$#$%
 %$#$%13%$#$%TEXT%$#$%Name of MCPS approved bus carrier%$#$%
 %$#$%14%$#$%CHECK_BOX-Public Transportation%$#$%Transportation Type: pt3%$#$%
@@ -66,8 +66,35 @@
 %$#$%26%$#$%TEXT%$#$%Trip Subject%$#$%
 %$#$%27%$#$%TEXT%$#$%Trip Destination%$#$%
 %$#$%28%$#$%TEXT%$#$%Trip/Curriculum Objectives%$#$%
+%$#$%29%$#$%TEXT%$#$%Account #%$#$%
+%$#$%30%$#$%TEXT%$#$%How Financed?%$#$%
+%$#$%31%$#$%TEXT%$#$%Total Cost of Trip%$#$%
+%$#$%32%$#$%DATE%$#$%On what date will you begin to collect money for the field trip?%$#$%
+%$#$%33%$#$%TEXT%$#$%What provisions have been made for your other classes?%$#$%
+%$#$%34%$#$%TEXT%$#$%Name(s) of Chaperone(s)%$#$%
+%$#$%35%$#$%TEXT%$#$%Number of Parents%$#$%
+%$#$%36%$#$%TEXT%$#$%Provisions for Students Not Participating%$#$%
+%$#$%37%$#$%TEXT%$#$%Mode of Transportation: %$#$%
+%$#$%38%$#$%DATE%$#$%Date to Go Online for Sale: %$#$%
+%$#$%39%$#$%DATE%$#$%Date to Go Offline for Sale: %$#$%
+%$#$%40%$#$%TEXT%$#$%Class Subject: %$#$%
+%$#$%41%$#$%TEXT%$#$%Group Name: %$#$%
+%$#$%42%$#$%TEXT%$#$%Time Activity Starts: %$#$%
+%$#$%43%$#$%TEXT%$#$%Time Activity Ends: %$#$%
+%$#$%44%$#$%TEXT%$#$%Name of substitute(s) for each class period:%$#$%
+%$#$%45%$#$%TEXT%$#$%Equipment You Need From School:%$#$%
+%$#$%46%$#$%TEXT%$#$%How will staff be notified that students will be missing class? %$#$%
+%$#$%47%$#$%TEXT%$#$%Sources of money for those students unable to pay (specify IAF account)%$#$%
+%$#$%48%$#$%TEXT%$#$%Staff in charge of medical needs %$#$%
+%$#$%49%$#$%TEXT%$#$%Employees attending and their phone #%$#$%
+%$#$%50%$#$%TEXT%$#$%Volunteer attending and their phone #%$#$%
+%$#$%51%$#$%TEXT%$#$%Ratio of Chaperones to Student %$#$%
+%$#$%52%$#$%TEXT%$#$%Procedures for implementing  telephone tree%$#$%
+%$#$%53%$#$%TEXT%$#$%local school procedures that will prepare travelers in case of an emergency situation %$#$%
+%$#$%54%$#$%TEXT%$#$%Identify Authorized Searcher %$#$%
+%$#$%55%$#$%TEXT%$#$%Name of hotel, complete address, and telephone number %$#$%
 %$#$%0%$#$%TEXT%$#$%Empty Space Qualifier- Leave Empty If Unknown%$#$%
-??????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????
+
 
 %$@$%1%$@$%DIRBEFOREREPLACEGEN/210-6 Local June FT Approval--FY20.pdf%$@$%L-ALL SCHOOLS%$@$%
 %$@$%7%$@$%DIRBEFOREREPLACEGEN/210-6 Local June FT Approval--FY20.pdf%$@$%T-3%$@$%
@@ -90,6 +117,8 @@
 %$@$%21%$@$%DIRBEFOREREPLACEGEN/210-6 Local June FT Approval--FY20.pdf%$@$%T-22%$@$%
 %$@$%22%$@$%DIRBEFOREREPLACEGEN/210-6 Local June FT Approval--FY20.pdf%$@$%T-23%$@$%
 %$@$%23%$@$%DIRBEFOREREPLACEGEN/210-6 Local June FT Approval--FY20.pdf%$@$%T-24%$@$%
+%$@$%47%$@$%DIRBEFOREREPLACEGEN/210-6 Local June FT Approval--FY20.pdf%$@$%T-25%$@$%
+%$@$%36%$@$%DIRBEFOREREPLACEGEN/210-6 Local June FT Approval--FY20.pdf%$@$%T-27%$@$%
 %$@$%2%$@$%DIRBEFOREREPLACEGEN/210-6 Local June FT Approval--FY20.pdf%$@$%T-31%$@$%
 
 
@@ -102,6 +131,7 @@
 %$@$%2%$@$%DIRBEFOREREPLACEGEN/Field Trip Accounting Spreadsheet--FY20.xlsx%$@$%C-5-4%$@$%
 %$@$%5%$@$%DIRBEFOREREPLACEGEN/Field Trip Accounting Spreadsheet--FY20.xlsx%$@$%C-6-4%$@$%
 %$@$%6%$@$%DIRBEFOREREPLACEGEN/Field Trip Accounting Spreadsheet--FY20.xlsx%$@$%C-6-8%$@$%
+%$@$%29%$@$%DIRBEFOREREPLACEGEN/Field Trip Accounting Spreadsheet--FY20.xlsx%$@$%C-4-4%$@$%
 
 
 %$@$%24%$@$%DIRBEFOREREPLACEGEN/Form 1 Field Trip Request for Approval Form--FY20.docx%$@$%T-1-1-1%$@$%
@@ -114,8 +144,15 @@
 %$@$%9%$@$%DIRBEFOREREPLACEGEN/Form 1 Field Trip Request for Approval Form--FY20.docx%$@$%T-1-8-1%$@$%
 %$@$%10%$@$%DIRBEFOREREPLACEGEN/Form 1 Field Trip Request for Approval Form--FY20.docx%$@$%T-1-8-2%$@$%
 %$@$%8%$@$%DIRBEFOREREPLACEGEN/Form 1 Field Trip Request for Approval Form--FY20.docx%$@$%T-1-8-3%$@$%
-%$@$%5%$@$%DIRBEFOREREPLACEGEN/Form 1 Field Trip Request for Approval Form--FY20.docx%$@$%T-1-9-2%$@$%
 %$@$%6%$@$%DIRBEFOREREPLACEGEN/Form 1 Field Trip Request for Approval Form--FY20.docx%$@$%T-1-9-3%$@$%
+%$@$%30%$@$%DIRBEFOREREPLACEGEN/Form 1 Field Trip Request for Approval Form--FY20.docx%$@$%T-1-9-1%$@$%
+%$@$%31%$@$%DIRBEFOREREPLACEGEN/Form 1 Field Trip Request for Approval Form--FY20.docx%$@$%T-1-9-2%$@$%
+%$@$%32%$@$%DIRBEFOREREPLACEGEN/Form 1 Field Trip Request for Approval Form--FY20.docx%$@$%T-1-10-1%$@$%
+%$@$%33%$@$%DIRBEFOREREPLACEGEN/Form 1 Field Trip Request for Approval Form--FY20.docx%$@$%T-1-12-1%$@$%
+%$@$%44%$@$%DIRBEFOREREPLACEGEN/Form 1 Field Trip Request for Approval Form--FY20.docx%$@$%T-1-13-1%$@$%
+%$@$%35%$@$%DIRBEFOREREPLACEGEN/Form 1 Field Trip Request for Approval Form--FY20.docx%$@$%T-1-14-1%$@$%
+
+
 
 
 %$@$%27%$@$%DIRBEFOREREPLACEGEN/Form 2 PHS Field Trip Budget Development Sheet--FY20.xlsx%$@$%C-9-3%$@$%
@@ -154,12 +191,22 @@
 %$@$%22%$@$%DIRBEFOREREPLACEGEN/Form 4 Approval for Extended Day, Out-of-Area, and Overnight Field Trips--210-4--FY20.pdf%$@$%T-10b1%$@$%
 %$@$%23%$@$%DIRBEFOREREPLACEGEN/Form 4 Approval for Extended Day, Out-of-Area, and Overnight Field Trips--210-4--FY20.pdf%$@$%T-10c%$@$%
 %$@$%2%$@$%DIRBEFOREREPLACEGEN/Form 4 Approval for Extended Day, Out-of-Area, and Overnight Field Trips--210-4--FY20.pdf%$@$%T-12e%$@$%
+%$@$%47%$@$%DIRBEFOREREPLACEGEN/Form 4 Approval for Extended Day, Out-of-Area, and Overnight Field Trips--210-4--FY20.pdf%$@$%T-11%$@$%
+%$@$%36%$@$%DIRBEFOREREPLACEGEN/Form 4 Approval for Extended Day, Out-of-Area, and Overnight Field Trips--210-4--FY20.pdf%$@$%T-12a%$@$%
 
 
 %$@$%1%$@$%DIRBEFOREREPLACEGEN/Form 5 Emergency Plan for Field Trips.pdf%$@$%L-ALL SCHOOLS 5/2019%$@$%
 %$@$%4%$@$%DIRBEFOREREPLACEGEN/Form 5 Emergency Plan for Field Trips.pdf%$@$%T-2%$@$%
 %$@$%27%$@$%DIRBEFOREREPLACEGEN/Form 5 Emergency Plan for Field Trips.pdf%$@$%T-3%$@$%
-
+%$@$%48%$@$%DIRBEFOREREPLACEGEN/Form 5 Emergency Plan for Field Trips.pdf%$@$%T-4%$@$%
+%$@$%2%$@$%DIRBEFOREREPLACEGEN/Form 5 Emergency Plan for Field Trips.pdf%$@$%T-5%$@$%
+%$@$%49%$@$%DIRBEFOREREPLACEGEN/Form 5 Emergency Plan for Field Trips.pdf%$@$%T-9%$@$%
+%$@$%50%$@$%DIRBEFOREREPLACEGEN/Form 5 Emergency Plan for Field Trips.pdf%$@$%T-10%$@$%
+%$@$%51%$@$%DIRBEFOREREPLACEGEN/Form 5 Emergency Plan for Field Trips.pdf%$@$%T-11%$@$%
+%$@$%52%$@$%DIRBEFOREREPLACEGEN/Form 5 Emergency Plan for Field Trips.pdf%$@$%T-12%$@$%
+%$@$%53%$@$%DIRBEFOREREPLACEGEN/Form 5 Emergency Plan for Field Trips.pdf%$@$%T-13%$@$%
+%$@$%54%$@$%DIRBEFOREREPLACEGEN/Form 5 Emergency Plan for Field Trips.pdf%$@$%T-14%$@$%
+%$@$%55%$@$%DIRBEFOREREPLACEGEN/Form 5 Emergency Plan for Field Trips.pdf%$@$%T-15%$@$%
 
 %$@$%1%$@$%DIRBEFOREREPLACEGEN/Form 6A Parent-Guardian Approval for Trips MCPS Transportation is provided 555-6--FY20.pdf%$@$%L-ALL SCHOOLS 4/2018%$@$%
 %$@$%7%$@$%DIRBEFOREREPLACEGEN/Form 6A Parent-Guardian Approval for Trips MCPS Transportation is provided 555-6--FY20.pdf%$@$%T-3%$@$%
@@ -201,6 +248,8 @@
 %$@$%2%$@$%DIRBEFOREREPLACEGEN/Form 10 PHS Online Store Request Form--FY20.xlsx%$@$%C-14-4%$@$%
 %$@$%4%$@$%DIRBEFOREREPLACEGEN/Form 10 PHS Online Store Request Form--FY20.xlsx%$@$%C-15-4%$@$%
 %$@$%7%$@$%DIRBEFOREREPLACEGEN/Form 10 PHS Online Store Request Form--FY20.xlsx%$@$%C-18-4%$@$%
+%$@$%38%$@$%DIRBEFOREREPLACEGEN/Form 10 PHS Online Store Request Form--FY20.xlsx%$@$%C-16-4%$@$%
+%$@$%39%$@$%DIRBEFOREREPLACEGEN/Form 10 PHS Online Store Request Form--FY20.xlsx%$@$%C-17-4%$@$%
 
 
 ??Java Programs Lack Sufficient Permissions to edit MCPS Field Trip Accounting Form 280-41--FY20.pdf or MCPS-Remittance Form 280-34--FY20.pdf

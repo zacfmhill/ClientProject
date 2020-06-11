@@ -30,16 +30,28 @@ public class doFileStuff {
 			InputStream IDuserProfilingStream = gui.class.getResourceAsStream("/IDuserProfiling.txt");
 			InputStream masterStream = gui.class.getResourceAsStream("/master.txt");
 			InputStream overOutSettStream = gui.class.getResourceAsStream("/OverOutSettings.txt");
+			InputStream errorOutStream = gui.class.getResourceAsStream(doFileStuff.myPlace().getPath()+"/notFilledOut.txt");
+			InputStream errorGenStream = doFileStuff.class.getResourceAsStream("/notFilledGen.txt");
 			File genSett = new File(myPlace(),"GenSettings.txt");
 			File IDuser = new File(myPlace(),"IDuserProfiling.txt");
 			File masterSett = new File(myPlace(),"master.txt");
 			File OverOutSett = new File(myPlace(),"OverOutSettings.txt");
-			System.out.println(genSettStream);
+			File errorOut = new File(myPlace(),"notFilledOut.txt");
+			File errorGen = new File(myPlace(),"notFilledGen.txt");
+			
+			System.out.println(errorOut);
+			System.out.println(errorGen);
+			System.out.println(errorOutStream);
+			System.out.println(errorGenStream);
 			if(genSett.exists()&&genSett.isFile()) {
 				if(IDuser.exists()&&IDuser.isFile()) {
 					if(masterSett.exists()&&masterSett.isFile()) {
 						if(OverOutSett.exists()&&OverOutSett.isFile()) {
-							creating = false;
+							if(errorGen.exists()&&errorGen.isFile()) {
+								if(errorOut.exists()&&errorOut.isFile()) {
+									creating = false;
+								}
+							}
 						}
 					}
 				}
@@ -47,9 +59,18 @@ public class doFileStuff {
 			System.out.println(creating);
 			if(creating) {
 				Files.copy(genSettStream, genSett.toPath(), StandardCopyOption.REPLACE_EXISTING);
+				System.out.println("g");
 				Files.copy(IDuserProfilingStream, IDuser.toPath(), StandardCopyOption.REPLACE_EXISTING);
+				System.out.println("g");
 				Files.copy(masterStream, masterSett.toPath(), StandardCopyOption.REPLACE_EXISTING);
+				System.out.println("g");
 				Files.copy(overOutSettStream, OverOutSett.toPath(), StandardCopyOption.REPLACE_EXISTING);
+				System.out.println("g");
+				Files.copy(errorGenStream, errorGen.toPath(),StandardCopyOption.REPLACE_EXISTING);
+				System.out.println("g");
+				Files.copy(errorOutStream, errorOut.toPath(),StandardCopyOption.REPLACE_EXISTING);
+				System.out.println("g");
+				
 			}
 			
 		} catch (Exception e) {

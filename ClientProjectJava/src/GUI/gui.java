@@ -1,46 +1,30 @@
 package GUI;
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
-import java.awt.EventQueue;
 import java.awt.FlowLayout;
-import java.awt.Frame;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.GridLayout;
-import java.awt.Image;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.io.FilenameFilter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Iterator;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.TreeMap;
-
 import javax.swing.*;
-import javax.swing.filechooser.FileNameExtensionFilter;
-
-import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTR;
-
 //import fileEdit.GeneratorPDF;
 import fileEdit.PDFgetCombos;
 import fileEdit.Receiver;
 
+@SuppressWarnings("serial")
 public class gui extends JFrame implements ActionListener {
 	private String folderPath = "";
 	private JPanel panel;
@@ -48,8 +32,7 @@ public class gui extends JFrame implements ActionListener {
 	private static JFrame frame;
 	private int width=800;
 	private int height = 600;
-	private int horGap,verGap = 10;
-	private JMenuItem FileAdd,save,preview,help,FieldAdd,Remove,Rename,Default;
+	private JMenuItem FileAdd,save,preview,FieldAdd,Remove,Rename,Default;
 	private ArrayList<File> fileInFolder = new ArrayList<File>();
 	private Map<Integer, String> fieldMap = new TreeMap<Integer,String>();
 	private Map<Integer, ArrayList<String>> inputToFileMap = new TreeMap<Integer,ArrayList<String>>();
@@ -58,14 +41,12 @@ public class gui extends JFrame implements ActionListener {
 	private File settFile;
 	private JFrame dAdd;
 	//private JButton bGen;
-	private JLabel genLabel;
 	private JTextArea placing;
 	private JTextArea fileName;
-	private ArrayList<String> currentFiles = new ArrayList<String>();
-	private JTextArea filesList;
 	private String currFieldName = "default name";
 	private String actingType = "";
 	private String actingID = "";
+	@SuppressWarnings("rawtypes")
 	private JComboBox typeCh;
 	private JFrame dRem;
 	private JPanel panelR;
@@ -92,6 +73,7 @@ public class gui extends JFrame implements ActionListener {
 		}
 	}
 
+	@SuppressWarnings("deprecation")
 	public gui(String filePath,String folder,String newPath) throws FileNotFoundException {
 		filePathToNew = newPath;
 		folderPath = folder;
@@ -198,9 +180,9 @@ for(Map.Entry<Integer,String> m:fieldMap.entrySet()){
 	            }
 	        };
 	        splitPane.setEnabled(false);
-	        splitPane.setMinimumSize(new Dimension(780,100));
-	        splitPane.setPreferredSize(new Dimension(780,100));
-	        splitPane.setMaximumSize(new Dimension(785,510));
+	        splitPane.setMinimumSize(new Dimension(780,50));
+	        splitPane.setPreferredSize(new Dimension(780,55));
+	        splitPane.setMaximumSize(new Dimension(785,60));
         	splitPane.setDividerSize(0);
 
 			listView.add(splitPane);
@@ -223,6 +205,12 @@ for(Map.Entry<Integer,String> m:fieldMap.entrySet()){
 		    frame.setSize(width,height);  
 		    frame.setResizable(false);
 		    frame.setVisible(true); 
+		    JLabel message = new JLabel("<html>\r\n" + 
+		    		"<body>\r\n" + 
+		    		"<h1 style= \" color: red; text-align: center;\"> Please note,<br>this program does not fill out every field in forms,<br>only common repeating ones!!<br>Enter the rest of the form data after using this program.</h1>\r\n" + 
+		    		"</body>\r\n" + 
+		    		"</html>");
+		    JOptionPane.showMessageDialog(null, message,"Alert",JOptionPane.PLAIN_MESSAGE);
 	}
 	
 	
@@ -234,7 +222,8 @@ private void dRemMake() {
     dRem = new JFrame("Remove Field");
     BoxLayout bR = new BoxLayout(dRem.getContentPane(), BoxLayout.Y_AXIS);
     dRem.getContentPane().setLayout(bR); 
-    JComboBox box = getComboItems();
+    @SuppressWarnings("rawtypes")
+	JComboBox box = getComboItems();
     panelR.add(box);
     JButton del = new JButton("Delete");
     del.addActionListener(new ActionListener() {
@@ -291,7 +280,9 @@ private void deleteMenCom(String comboOption) {
 		e.printStackTrace();
 	}
 }
+@SuppressWarnings({ "unchecked", "rawtypes" })
 private JComboBox getComboItems() {
+	@SuppressWarnings("rawtypes")
 	JComboBox ret = new JComboBox();
 	for(Map.Entry<Integer,String> m:fieldMap.entrySet()){  
 		try {
@@ -308,6 +299,7 @@ private JComboBox getComboItems() {
 	
 	
 //JFrame for Add Field
+@SuppressWarnings({ "unchecked", "rawtypes" })
 private void dAddMake() {
 	 		currFieldName = "Default Field Name";
 		    panel = new JPanel();
@@ -337,7 +329,8 @@ private void dAddMake() {
 		    panel.add(new JLabel("Set the field name below. If non is set, default will be used."));
 		    panel.add(addFieldName);
 		    typeCh.addActionListener(new ActionListener()  {  
-	            public void actionPerformed( ActionEvent e )  
+	            @SuppressWarnings("deprecation")
+				public void actionPerformed( ActionEvent e )  
 	            {  
 	            	panelSel.setVisible(false);
 	            	JPanel lb = new JPanel();
@@ -726,7 +719,8 @@ private void dAddMake() {
 //Save Button Action Handling
 	class saveActionListener implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
-			  for(Map.Entry m:idToCompMap.entrySet()){  
+			if(0==JOptionPane.showConfirmDialog(frame, "Are You Sure You Want To Apply Your Changes?","Confirm Applying?",0)) {
+			  for(@SuppressWarnings("rawtypes") Map.Entry m:idToCompMap.entrySet()){  
 	        	 Component currComp = (Component) m.getValue();
 	        	 //if current item is a textArea
 	        	 if(currComp instanceof JTextArea) {
@@ -742,7 +736,8 @@ private void dAddMake() {
 	        		 
 	        		 //if combo box
 	        		 if(cFirs instanceof JComboBox) {
-	        			 JComboBox curr = (JComboBox)cFirs;
+	        			 @SuppressWarnings("rawtypes")
+						JComboBox curr = (JComboBox)cFirs;
 	        			 String content = String.valueOf(curr.getSelectedItem());
 	        			 Receiver.send(content,inputToFileMap.get(m.getKey()));
 	        			 
@@ -784,6 +779,36 @@ private void dAddMake() {
 	        		 
 	        	 }
 	         }
+			try {
+				String retErr = "<html><dl>";
+				FileReader fr;
+			  if(setFilePath.contains("Gen")) {
+				  fr = new FileReader(new File(doFileStuff.myPlace(),"notFilledGen.txt"));
+	 			}
+	         else {
+	        	 fr = new FileReader(new File(doFileStuff.myPlace(),"notFilledOut.txt"));
+	         }
+			 Scanner sc = new Scanner(fr); 
+	 		while(sc.hasNextLine()) {
+	 			String nextLine = sc.nextLine();
+	 			if(nextLine.contains(".pdf")||nextLine.contains(".xlsx")||nextLine.contains(".docx")||nextLine.contains(".doc")) {
+	 				retErr += "<dt style=\"color:red; list-style-type: circle;\"> " + nextLine + " </dt>";
+	 			}
+	 			else {
+	 				retErr += "<dd> " + ">"+nextLine + " </dd>";
+	 			}
+
+	 		}
+	 		sc.close();
+	 		retErr +="</dl></html>";
+	 		JLabel message = new JLabel(retErr);
+	        JOptionPane.showMessageDialog(null, message,"All Missing Data!!",2);
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			}
+			
 	      }
 	}
 	
@@ -803,12 +828,11 @@ private void dAddMake() {
 		    int i=fileChooser.showOpenDialog(this);    
 		    if(i==JFileChooser.APPROVE_OPTION){    
 		        File file =fileChooser.getSelectedFile();    
-		        String filepath= file.getPath();    
+		        file.getPath();    
 		    }
 		}
 		else if (e.getSource()== FieldAdd) {
 			if(allowed) {
-			currentFiles = new ArrayList<String>();
 			dAddMake();
 			}
 		}
@@ -911,6 +935,7 @@ private void dAddMake() {
 		}
 		sc.close();
 	}
+	@SuppressWarnings("deprecation")
 	public void getFieldSettById(int progID) throws FileNotFoundException {
 		ArrayList<String> progIDStrings = new ArrayList<String>();
 		Scanner sc = new Scanner(settFile); 
@@ -993,6 +1018,7 @@ private void dAddMake() {
 		return textArea;
 	}
 	
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public Component comboBox(String typeArg) {
 		JPanel box = new JPanel();
 		JComboBox comboBox= new JComboBox();
@@ -1005,6 +1031,7 @@ private void dAddMake() {
 	    return box;
 	}
 	
+	@SuppressWarnings("deprecation")
 	public Component dateCreate() {
 		JPanel panel = new JPanel();
 		//panel.setLayout(new BoxLayout(panel, BoxLayout.X_AXIS)); 
