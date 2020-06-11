@@ -1,0 +1,38 @@
+210-6 Local June FT Approval--FY20.pdf:
+    Are parents/guardians invited to attend trip?(Check Box)
+    School Staff Sponsor Title
+Chaperone Parking Information.docx:
+    Insert room number
+    Insert time
+    Insert items
+Field Trip Accounting Spreadsheet--FY20.xlsx:
+    All student rows for money
+Form 1 Field Trip Request for Approval Form--FY20.docx:
+    Date(s) of Trip
+    Type of Transportation
+    Cancellation Deadline Dates 
+    Name(s) of Chaperone(s) 
+Form 2 PHS Field Trip Budget Development Sheet--FY20.xlsx:
+    All event cost items
+Form 4 Approval for Extended Day, Out-of-Area, and Overnight Field Trips--210-4--FY20.pdf:
+    Are parents/guardians invited to attend trip?(Check Box)
+    School Staff Sponsor Title
+Form 5 Emergency Plan for Field Trips.pdf:
+    Sponsor Cell
+Form 6A Parent-Guardian Approval for Trips MCPS Transportation is provided 555-6--FY20.pdf
+    School Staff Sponsor Date Of Signature
+    From/To Options
+Form 6B 560-31 Non-MCPS Transportation--FY20.pdf
+    School Staff Sponsor Date Of Signature
+    From/To Options
+Form 7 Authorization to Conduct Student Search--FY20.docx:
+    Date #2(error replacing)
+    Teacher List
+Form 10 PHS Online Store Request Form--FY20.xlsx
+    Type of Participant (check box)
+Form 10 PHS Online Store Request Form--FY20.xlsx:
+    ALL
+MCPS Student Fee Waiver Form--FY20.pdf:
+    ALL
+MCPS-Remittance Form 280-34 FY20.pdf:
+    ALL

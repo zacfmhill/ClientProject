@@ -93,6 +93,7 @@ public class gui extends JFrame implements ActionListener {
 					}
 					catch (Exception e) {
 						e.printStackTrace();
+						JOptionPane.showMessageDialog(frame, "Error Thrown While Trying To Copy Files: "+ e.getCause());
 						
 					}
 			    	}
@@ -101,6 +102,7 @@ public class gui extends JFrame implements ActionListener {
 		}
 		catch(Exception e) {
 			e.printStackTrace();
+			JOptionPane.showMessageDialog(frame, "Error Thrown While Trying To Index Files: "+ e.getCause());
 		}
 			
 			settFile = new File(setFilePath);
@@ -802,10 +804,10 @@ private void dAddMake() {
 	 		sc.close();
 	 		retErr +="</dl></html>";
 	 		JLabel message = new JLabel(retErr);
-	        JOptionPane.showMessageDialog(null, message,"All Missing Data!!",2);
+	        JOptionPane.showMessageDialog(null, message,"All Missing Data!",2);
 			} catch (Exception e1) {
-				// TODO Auto-generated catch block
 				e1.printStackTrace();
+				JOptionPane.showMessageDialog(frame, "Error Reading File For Not Filled Fields: "+ e1.getCause());
 			}
 			}
 			

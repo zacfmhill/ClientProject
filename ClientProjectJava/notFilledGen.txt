@@ -1,0 +1,41 @@
+260-1--Fee Waiver Record.pdf: 
+    Signature of Teacher + Date
+    Principal or Designee Name (Please Print):
+Chaperone Parking Information.docx:
+    Insert room number
+    Insert time
+    Insert items
+Field Trip Accounting Spreadsheet--FY20.xlsx:
+    All student rows for money
+Final June Field Trip Form--FY20.pdf:
+    School Staff Sponsor Title
+    Are parents/guardians invited to attend trip?(CheckBox)
+Form 1 Field Trip Request for Approval Form--FY19.docx:
+    Date(s) of Trip
+    Type of Transportation
+    Cancellation Deadline Dates 
+    Name(s) of Chaperone(s) 
+Form 2 PHS Field Trip Budget Development Sheet--FY20.xlsx:
+    All event cost items
+Form 3 Parent-Guardian Approval for Trips MCPS Transportation is provided 555-6--FY20.pdf:
+    School Staff Sponsor Date Of Signature
+    From/To Options
+Form 4 Non-MCPS Transportation  560-31--FY20.pdf:
+    School Staff Sponsor Date Of Signature
+    From/To Options
+Form 5 Authorization to Conduct Student Search--FY20.docx:
+    Date #2(error replacing)
+    Teacher List
+Form 8 Field Trip Substitute Information Sheet--FY20.docx:
+    Name of Substitute
+    Substitute ID Number
+    Name of Staff Requiring Substitute
+Form 9 PHS Online Store Request Form--FY20.xlsx:
+    Type of Participant (check box)
+In School Activity Request Form--FY20.docx:
+    Date(s) of Activity
+    Location: (e.g., auditorium, Cafeteria, room #)
+MCPS Field Trip Accounting Form 280-41--FY20.pdf:
+    All (Security Error)
+MCPS-Remittance Form 280-34--FY20.pdf:
+    All (Security Error)

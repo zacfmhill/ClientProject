@@ -5,7 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 
-import javax.swing.JOptionPane;
+//import javax.swing.JOptionPane;
 
 import GUI.gui;
 
@@ -100,6 +100,7 @@ public class Receiver {
 		}
 		catch (Exception e) {
 			e.printStackTrace();
+			//JOptionPane.showMessageDialog(null, "Error Editing Files: "+ e.getStackTrace());
 		}
 	}
 	
@@ -127,6 +128,7 @@ public class Receiver {
 		}
 		catch(Exception e) {
 			e.printStackTrace();
+		//	JOptionPane.showMessageDialog(null, "Error Editing Files: "+ e.getStackTrace());
 		}
 	}
 	
@@ -168,6 +170,7 @@ public class Receiver {
 		//or the type of the field, ex checkbox, does not match what the user used!
 		catch(Exception e) {
 			e.printStackTrace();
+			//JOptionPane.showMessageDialog(null, "Error Editing Files: "+ e.getStackTrace());
 		}
 	}
 	
