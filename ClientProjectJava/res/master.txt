@@ -66,18 +66,58 @@
 %$#$%26%$#$%TEXT%$#$%Trip Subject%$#$%
 %$#$%27%$#$%TEXT%$#$%Trip Destination%$#$%
 %$#$%28%$#$%TEXT%$#$%Trip/Curriculum Objectives%$#$%
+%$#$%29%$#$%TEXT%$#$%Account #%$#$%
+%$#$%30%$#$%TEXT%$#$%How Financed?%$#$%
+%$#$%31%$#$%TEXT%$#$%Total Cost of Trip%$#$%
+%$#$%32%$#$%DATE%$#$%On what date will you begin to collect money for the field trip?%$#$%
+%$#$%33%$#$%TEXT%$#$%What provisions have been made for your other classes?%$#$%
+%$#$%34%$#$%TEXT%$#$%Name(s) of Chaperone(s)%$#$%
+%$#$%35%$#$%TEXT%$#$%Number of Parents%$#$%
+%$#$%36%$#$%TEXT%$#$%Provisions for Students Not Participating%$#$%
+%$#$%37%$#$%TEXT%$#$%Mode of Transportation: %$#$%
+%$#$%38%$#$%DATE%$#$%Date to Go Online for Sale: %$#$%
+%$#$%39%$#$%DATE%$#$%Date to Go Offline for Sale: %$#$%
+%$#$%40%$#$%TEXT%$#$%Class Subject: %$#$%
+%$#$%41%$#$%TEXT%$#$%Group Name: %$#$%
+%$#$%42%$#$%TEXT%$#$%Time Activity Starts: %$#$%
+%$#$%43%$#$%TEXT%$#$%Time Activity Ends: %$#$%
+%$#$%44%$#$%TEXT%$#$%Name of substitute(s) for each class period:%$#$%
+%$#$%45%$#$%TEXT%$#$%Equipment You Need From School:%$#$%
+%$#$%46%$#$%TEXT%$#$%How will staff be notified that students will be missing class? %$#$%
+%$#$%47%$#$%TEXT%$#$%Sources of money for those students unable to pay (specify IAF account)%$#$%
 %$#$%0%$#$%TEXT%$#$%Empty Space Qualifier- Leave Empty If Unknown%$#$%
+????????????????????????????????????????????????????????????????????????????????????????????????????????????
+
 
 
 %$@$%1%$@$%DIRBEFOREREPLACEGEN/260-1--Fee Waiver Record.pdf%$@$%L-ALL SCHOOLS 5/2019%$@$%
 %$@$%2%$@$%DIRBEFOREREPLACEGEN/260-1--Fee Waiver Record.pdf%$@$%T-17%$@$%
+
+%$@$%2%$@$%DIRBEFOREREPLACEGEN/Chaperone Parking Information.docx%$@$%R-insert date of the trip%$@$%
 
 
 %$@$%3%$@$%DIRBEFOREREPLACEGEN/Field Trip Accounting Spreadsheet--FY20.xlsx%$@$%C-2-4%$@$%
 %$@$%4%$@$%DIRBEFOREREPLACEGEN/Field Trip Accounting Spreadsheet--FY20.xlsx%$@$%C-3-4%$@$%
 %$@$%2%$@$%DIRBEFOREREPLACEGEN/Field Trip Accounting Spreadsheet--FY20.xlsx%$@$%C-5-4%$@$%
 %$@$%5%$@$%DIRBEFOREREPLACEGEN/Field Trip Accounting Spreadsheet--FY20.xlsx%$@$%C-6-4%$@$%
+%$@$%29%$@$%DIRBEFOREREPLACEGEN/Field Trip Accounting Spreadsheet--FY20.xlsx%$@$%C-4-4%$@$%
 %$@$%6%$@$%DIRBEFOREREPLACEGEN/Field Trip Accounting Spreadsheet--FY20.xlsx%$@$%C-6-8%$@$%
+
+
+%$@$%0%$@$%DIRBEFOREREPLACEGEN/Form 6 Parent Permission for Field Trip--FY20.docx%$@$%R- _________%$@$%
+%$@$%0%$@$%DIRBEFOREREPLACEGEN/Form 6 Parent Permission for Field Trip--FY20.docx%$@$%R- ____________%$@$%
+%$@$%0%$@$%DIRBEFOREREPLACEGEN/Form 6 Parent Permission for Field Trip--FY20.docx%$@$%R- _________%$@$%
+%$@$%0%$@$%DIRBEFOREREPLACEGEN/Form 6 Parent Permission for Field Trip--FY20.docx%$@$%R- ___________%$@$%
+%$@$%0%$@$%DIRBEFOREREPLACEGEN/Form 6 Parent Permission for Field Trip--FY20.docx%$@$%R- ________ %$@$%
+%$@$%0%$@$%DIRBEFOREREPLACEGEN/Form 6 Parent Permission for Field Trip--FY20.docx%$@$%R- ________%$@$%
+%$@$%2%$@$%DIRBEFOREREPLACEGEN/Form 6 Parent Permission for Field Trip--FY20.docx%$@$%I-Trip Sponsor: %$@$%
+%$@$%4%$@$%DIRBEFOREREPLACEGEN/Form 6 Parent Permission for Field Trip--FY20.docx%$@$%I-Date of Trip: %$@$%
+%$@$%9%$@$%DIRBEFOREREPLACEGEN/Form 6 Parent Permission for Field Trip--FY20.docx%$@$%I-Time of Departure: %$@$%
+%$@$%37%$@$%DIRBEFOREREPLACEGEN/Form 6 Parent Permission for Field Trip--FY20.docx%$@$%I-Mode of Transportation: %$@$%
+%$@$%6%$@$%DIRBEFOREREPLACEGEN/Form 6 Parent Permission for Field Trip--FY20.docx%$@$%I-Cost Per Student: %$@$%
+%$@$%10%$@$%DIRBEFOREREPLACEGEN/Form 6 Parent Permission for Field Trip--FY20.docx%$@$%I-Time of Return: %$@$%
+
+
 
 
 %$@$%1%$@$%DIRBEFOREREPLACEGEN/Final June Field Trip Form--FY20.pdf%$@$%L-ALL SCHOOLS%$@$%
@@ -102,7 +142,8 @@
 %$@$%22%$@$%DIRBEFOREREPLACEGEN/Final June Field Trip Form--FY20.pdf%$@$%T-23%$@$%
 %$@$%23%$@$%DIRBEFOREREPLACEGEN/Final June Field Trip Form--FY20.pdf%$@$%T-24%$@$%
 %$@$%2%$@$%DIRBEFOREREPLACEGEN/Final June Field Trip Form--FY20.pdf%$@$%T-31%$@$%
-
+%$@$%47%$@$%DIRBEFOREREPLACEGEN/Final June Field Trip Form--FY20.pdf%$@$%T-25%$@$%
+%$@$%36%$@$%DIRBEFOREREPLACEGEN/Final June Field Trip Form--FY20.pdf%$@$%T-27%$@$%
 
 %$@$%24%$@$%DIRBEFOREREPLACEGEN/Form 1 Field Trip Request for Approval Form--FY19.docx%$@$%T-1-1-1%$@$%
 %$@$%25%$@$%DIRBEFOREREPLACEGEN/Form 1 Field Trip Request for Approval Form--FY19.docx%$@$%T-1-1-2%$@$%
@@ -114,8 +155,13 @@
 %$@$%9%$@$%DIRBEFOREREPLACEGEN/Form 1 Field Trip Request for Approval Form--FY19.docx%$@$%T-1-8-1%$@$%
 %$@$%10%$@$%DIRBEFOREREPLACEGEN/Form 1 Field Trip Request for Approval Form--FY19.docx%$@$%T-1-8-2%$@$%
 %$@$%8%$@$%DIRBEFOREREPLACEGEN/Form 1 Field Trip Request for Approval Form--FY19.docx%$@$%T-1-8-3%$@$%
-%$@$%5%$@$%DIRBEFOREREPLACEGEN/Form 1 Field Trip Request for Approval Form--FY19.docx%$@$%T-1-9-2%$@$%
 %$@$%6%$@$%DIRBEFOREREPLACEGEN/Form 1 Field Trip Request for Approval Form--FY19.docx%$@$%T-1-9-3%$@$%
+%$@$%30%$@$%DIRBEFOREREPLACEGEN/Form 1 Field Trip Request for Approval Form--FY19.docx%$@$%T-1-9-1%$@$%
+%$@$%31%$@$%DIRBEFOREREPLACEGEN/Form 1 Field Trip Request for Approval Form--FY19.docx%$@$%T-1-9-2%$@$%
+%$@$%32%$@$%DIRBEFOREREPLACEGEN/Form 1 Field Trip Request for Approval Form--FY19.docx%$@$%T-1-10-1%$@$%
+%$@$%33%$@$%DIRBEFOREREPLACEGEN/Form 1 Field Trip Request for Approval Form--FY19.docx%$@$%T-1-12-1%$@$%
+%$@$%44%$@$%DIRBEFOREREPLACEGEN/Form 1 Field Trip Request for Approval Form--FY19.docx%$@$%T-1-13-1%$@$%
+%$@$%35%$@$%DIRBEFOREREPLACEGEN/Form 1 Field Trip Request for Approval Form--FY19.docx%$@$%T-1-14-1%$@$%
 
 
 %$@$%27%$@$%DIRBEFOREREPLACEGEN/Form 2 PHS Field Trip Budget Development Sheet--FY20.xlsx%$@$%C-9-3%$@$%
@@ -163,20 +209,32 @@
 %$@$%2%$@$%DIRBEFOREREPLACEGEN/Form 8 Field Trip Substitute Information Sheet--FY20.docx%$@$%I-Field Trip Sponsor/Account Manager %$@$%
 %$@$%0%$@$%DIRBEFOREREPLACEGEN/Form 8 Field Trip Substitute Information Sheet--FY20.docx%$@$%R-_________________________%$@$%
 %$@$%4%$@$%DIRBEFOREREPLACEGEN/Form 8 Field Trip Substitute Information Sheet--FY20.docx%$@$%I-Date of Field Trip %$@$%
+%$@$%0%$@$%DIRBEFOREREPLACEGEN/Form 8 Field Trip Substitute Information Sheet--FY20.docx%$@$%R- _______%$@$%
+%$@$%29%$@$%DIRBEFOREREPLACEGEN/Form 8 Field Trip Substitute Information Sheet--FY20.docx%$@$%I-Field Trip Account Number %$@$%
 
 
 %$@$%3%$@$%DIRBEFOREREPLACEGEN/Form 9 PHS Online Store Request Form--FY20.xlsx%$@$%C-10-4%$@$%
 %$@$%2%$@$%DIRBEFOREREPLACEGEN/Form 9 PHS Online Store Request Form--FY20.xlsx%$@$%C-14-4%$@$%
 %$@$%4%$@$%DIRBEFOREREPLACEGEN/Form 9 PHS Online Store Request Form--FY20.xlsx%$@$%C-15-4%$@$%
 %$@$%7%$@$%DIRBEFOREREPLACEGEN/Form 9 PHS Online Store Request Form--FY20.xlsx%$@$%C-18-4%$@$%
+%$@$%38%$@$%DIRBEFOREREPLACEGEN/Form 9 PHS Online Store Request Form--FY20.xlsx%$@$%C-16-4%$@$%
+%$@$%39%$@$%DIRBEFOREREPLACEGEN/Form 9 PHS Online Store Request Form--FY20.xlsx%$@$%C-17-4%$@$%
 
 
 %$@$%3%$@$%DIRBEFOREREPLACEGEN/In School Activity Request Form--FY20.docx%$@$%T-1-1-1%$@$%
 %$@$%2%$@$%DIRBEFOREREPLACEGEN/In School Activity Request Form--FY20.docx%$@$%T-1-1-2%$@$%
+%$@$%40%$@$%DIRBEFOREREPLACEGEN/In School Activity Request Form--FY20.docx%$@$%T-1-2-1%$@$%
+%$@$%41%$@$%DIRBEFOREREPLACEGEN/In School Activity Request Form--FY20.docx%$@$%T-1-2-2%$@$%
 %$@$%8%$@$%DIRBEFOREREPLACEGEN/In School Activity Request Form--FY20.docx%$@$%T-1-2-3%$@$%
 %$@$%19%$@$%DIRBEFOREREPLACEGEN/In School Activity Request Form--FY20.docx%$@$%T-1-4-1%$@$%
 %$@$%26%$@$%DIRBEFOREREPLACEGEN/In School Activity Request Form--FY20.docx%$@$%T-1-5-1%$@$%
+%$@$%42%$@$%DIRBEFOREREPLACEGEN/In School Activity Request Form--FY20.docx%$@$%T-2-1-1%$@$%
+%$@$%43%$@$%DIRBEFOREREPLACEGEN/In School Activity Request Form--FY20.docx%$@$%T-2-1-2%$@$%
 %$@$%24%$@$%DIRBEFOREREPLACEGEN/In School Activity Request Form--FY20.docx%$@$%T-3-3-1%$@$%
+%$@$%33%$@$%DIRBEFOREREPLACEGEN/In School Activity Request Form--FY20.docx%$@$%T-3-1-1%$@$%
+%$@$%44%$@$%DIRBEFOREREPLACEGEN/In School Activity Request Form--FY20.docx%$@$%T-3-2-1%$@$%
+%$@$%45%$@$%DIRBEFOREREPLACEGEN/In School Activity Request Form--FY20.docx%$@$%T-3-4-1%$@$%
+%$@$%46%$@$%DIRBEFOREREPLACEGEN/In School Activity Request Form--FY20.docx%$@$%T-3-5-1%$@$%
 
 ??Java Programs Lack Sufficient Permissions to edit MCPS Field Trip Accounting Form 280-41--FY20.pdf or MCPS-Remittance Form 280-34--FY20.pdf
 ??

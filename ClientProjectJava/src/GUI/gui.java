@@ -75,6 +75,11 @@ public class gui extends JFrame implements ActionListener {
 
 	@SuppressWarnings("deprecation")
 	public gui(String filePath,String folder,String newPath) throws FileNotFoundException {
+//		try { 
+//		    UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+//		} catch (Exception e) {
+//		    e.printStackTrace();
+//		}
 		filePathToNew = newPath;
 		folderPath = folder;
 		setFilePath = filePath;
